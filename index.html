@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="SQdDp4AXcCEK9WRGaj5cMJEUH9BpbtANMEoLkKA6inc" />
     <meta name="description" content="Engineer Brian Odhiambo's modern portfolio showcasing projects and technical achievements.">
     <meta property="og:title" content="Engineer Brian Odhiambo - Portfolio">
 <meta property="og:description" content="Portfolio website of Engineer Brian Odhiambo, showcasing projects and technical achievements in software development and engineering.">
@@ -11,10 +10,15 @@
 <meta property="og:url" content="https://engineerodhiambo.netlify.app">
 <meta property="og:type" content="website">
 <meta name="keywords" content="Engineer, Brian Odhiambo, Software Developer, Mining Engineer, Portfolio, Projects, Resume, Skills, Certifications">
-    <title>Engineer Brian Odhiambo, Founder and CEO iskify360, Software Developer, Mining Engineer, Portfolio, Projects, Resume, Skills, Certifications</title>
+    <title>Engineer Brian Odhiambo, Founder and CEO Iskify360, Software Developer, Mining Engineer, T3chnical Projects, Resume, Skills, Certifications</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Tailwind CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<!-- Animate.css -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="favicon.ico">
@@ -38,309 +42,866 @@
 </head>
 <body>
     <header class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Engineer Brian Odhiambo</h1>
-                <p>Innovative Software Developer & Mining and Mineral Processing Engineer</p>
-               
+    <div class="container">
+        <div class="hero-content">
+           
+            <h1>
+  Engineer Brian Odhiambo<span class="cursor">|</span>
+</h1>
+            <p id="dynamic-text" class="slide-up"></p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn-primary">Learn more</a>
+                <a href="#projects" class="btn-secondary">Explore My Work</a>
             </div>
         </div>
-    </header>
+    </div>
 
-    <div id="sidebar" class="sidebar hidden">
-    <button id="close-button" class="close-button">&times;</button> <!-- Close button -->
-    <nav>
-        <ul class="nav-menu">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</div>
+    <!-- Social Media Links (Top) -->
+    <div class="social-media-links-top">
+        <a href="https://facebook.com/brianodhiambo.wuodben" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://linkedin.com/in/brian-odhiambo-4646b4327" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com/eng_brayo" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/BrianOdhia67569" target="_blank"><i class="fab fa-twitter"></i></a>
+       
+    </div>
+        
 
-    </header>
+    <!-- Scroll Down Indicator -->
+    <a href="#about" class="scroll-down">
+        <i class="arrow-icon">↓</i>
+    </a>
 
+    <!-- Video Section -->
+    <section class="video-section" id="video-section">
+        <h2>Watch My Story</h2>
+        <div class="video-wrapper">
+            <video id="video" width="100%" height="auto" controls preload="none" class="video-player">
+                <source src="proffession.mp4" type="video/mp4">
+                <p>Your browser doesn't support the video tag.</p>
+            </video>
+        </div>
+    </section>
+
+   </header>
+
+<style>
+/* Social Media Links (Top) */
+.social-media-links-top {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+
+.social-media-links-top a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media-links-top a:hover {
+    color: #6e45e2; /* Change icon color on hover */
+}
+
+/* Video Section */
+.video-section {
+    padding: 10px 0;
+    background: linear-gradient(120deg, #1e3c72, #2a5298);
+    margin-top: 30px;
+    height: 60vh;
+    width: 80%;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.video-wrapper {
+    max-width: 100%;
+    margin: 0 auto; /* Center the video */
+    display: block; /* Make sure it's block-level */
+    padding-top: 0px; /* Optional: Adds padding above the video */
+}
+
+.video-player {
+    width: 100%;
+    height: 45vh;
+    object-fit: contain; /* Maintain aspect ratio and avoid clipping */
+    max-height: 100%; /* Prevent the video from stretching taller than the container */
+    border-radius: 8px;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background: linear-gradient(120deg, #1e3c72, #2a5298);
+    background-size: 200% 200%;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    flex-direction: column;
+    animation: gradientShift 10s ease infinite;
+}
+
+/* Define the gradient color shift animation */
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(120deg, #1e3c72, #2a5298); /* Deep blue */
+    }
+    25% {
+        background: linear-gradient(120deg, #2a5298, #6e7f94); /* Light blue */
+    }
+    50% {
+        background: linear-gradient(120deg, #6e7f94, #4c6a92); /* Mid-tone blue */
+    }
+    75% {
+        background: linear-gradient(120deg, #4c6a92, #2a5298); /* Return to dark blue */
+    }
+    100% {
+        background: linear-gradient(120deg, #1e3c72, #2a5298); /* Deep blue */
+    }
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content */
+    justify-content: center;
+}
+
+.hero-section h1 {
+  display: inline-block;
+  font-size: 3.5rem; /* Larger title on larger screens */
+    font-weight: bold;
+    margin-bottom: 10px;
+  overflow: hidden; /* Ensures the text is clipped as it types */
+  
+  border-right: 3px solid transparent; /* Placeholder for blinking effect */
+  animation: typing 4s steps(30, end), blink-caret 0.7s step-end infinite;
+  font-family: Roboto; /* Typewriter font style */
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    position: relative;
+    opacity: 0;
+}
+
+/* Laptop and larger screen adjustments (min-width 1024px) */
+@media (min-width: 1024px) {
+    .hero-section {
+        height: 100vh; /* Reduce the height of the hero section */
+        padding: 30px 0; /* Add more space around the content */
+    }
+
+    .hero-content h1 {
+        font-size: 4rem; /* Larger heading for better readability */
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 1.8rem; /* Larger paragraph text for better readability */
+        margin-bottom: 20px;
+    }
+
+    .video-section {
+        height: 60vh; /* Adjust video section height for laptops */
+        width: 80%;
+    }
+
+    .video-wrapper {
+        max-width: 80%; /* Allow for a bit of padding on the sides */
+        
+    }
+
+    .video-player {
+        width: 100%;
+        height: 45vh;
+        object-fit: contain; /* Prevent video from stretching or cutting off */
+    }
+
+    /* Position the social media links towards the top-right corner on larger screens */
+    .social-media-links-top {
+        top: 30px;
+        right: 30px;
+        left: auto;
+        transform: translateX(0); /* Remove horizontal centering */
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 110vh; /* Increase height for smaller screens */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Smaller heading for mobile */
+    }
+
+    .hero-content p {
+        font-size: 1.2rem; /* Smaller text for mobile */
+    }
+}
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background: #ffffff;
+    color: #6e45e2;
+    border: 2px solid #ffffff;
+}
+
+.btn-primary:hover {
+    background: #6e45e2;
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-secondary:hover {
+    background: #ffffff;
+    color: #6e45e2;
+}
+
+/* Chat Banner - Styled as Communication Icon */
+.chat-banner {
+    
+    display: inline-flex;
+    align-items: center;
+    
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    min-width: 200px; /* Make the banner wide enough */
+    justify-content: center; /* Align content center */
+    z-index: 10; /* Ensure it's above other content */
+}
+
+/* Hover effect for interaction */
+.chat-banner:hover {
+    transform: scale(1.05);
+}
+
+/* Icon for chat */
+.chat-banner:before {
+    content: '💬'; /* Chat bubble icon */
+    margin-right: 6px;
+    font-size: 1.5rem; /* Larger icon */
+}
+
+/* Text styling */
+.chat-banner p {
+    margin: 0;
+    font-size: 1.1rem; /* Slightly larger text */
+    font-weight: 600; /* Make the text bold */
+}
+
+/* Small screen responsive tweaks */
+@media (max-width: 768px) {
+    .chat-banner {
+        padding: 8px 16px; /* Adjust padding on smaller screens */
+        min-width: 180px; /* Adjust minimum width for smaller devices */
+    }
+
+    .chat-banner:before {
+        font-size: 0.7rem; /* Adjust icon size */
+    }
+
+    .chat-banner p {
+        font-size: 0.7rem; /* Adjust text size */
+    }
+}
+.scroll-down {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Slide-Up Animation */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-in forwards;
+}
+</style>
+
+<script>
+    // Titles Array with More Entries
+    const titles = [
+        "Innovative Software Developer",
+        "Tech Enthusiast",
+        "Nature Explorer",
+        "Mining and Mineral Processing Engineer",
+        "Creative Problem Solver",
+        "Leader in Digital Transformation",
+        "Environmental Advocate",
+        "Tech Visionary",
+        "Discipline Enthusiast",
+        "Dynamic Innovator",
+        "Family Person",
+        "Introverted Professional"
+    ];
+
+    let index = 0;
+    const textElement = document.getElementById("dynamic-text");
+
+    function changeTitle() {
+        // Remove the animation class to reset it
+        textElement.classList.remove("slide-up");
+
+        // Wait for a reflow to apply the animation class again
+        setTimeout(() => {
+            textElement.classList.add("slide-up");
+            textElement.textContent = titles[index]; // Update the text
+            index = (index + 1) % titles.length; // Cycle through titles
+        }, 50); // Small delay to trigger reflow
+    }
+
+    // Change title every 3 seconds
+    setInterval(changeTitle, 3000);
+
+    // Function to open WhatsApp with your number
+    function openWhatsApp() {
+        const phoneNumber = "254758330446"; // Replace with your WhatsApp number (with country code)
+        const message = "Hello, I would like to chat!"; // Optional pre-filled message
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
+    }
+    
+    
+</script>
+
+<script>
+    const text = "Engineer Brian Odhiambo";
+const h1 = document.querySelector("h1");
+let indeX = 0;
+
+function typeWriter() {
+  if (indeX < text.length) {
+    h1.innerHTML = text.substring(0, indeX + 1) + '<span class="cursor">|</span>';
+    indeX++;
+    setTimeout(typeWriter, 100); // Adjust typing speed
+  } else {
+    // Optional: Remove the cursor after typing
+    document.querySelector(".cursor").style.display = "none";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", typeWriter);
+</script>
     <main>
-        <section id="about" class="about-section">
+ <section id="about" class="about-section">
     <div class="container">
         <h2>About Engineer Brian</h2>
         <div class="about-content">
-            <img src="engineer2.jpg" alt="Portrait of Engineer Brian Odhiambo showcasing his skills as a software developer and engineer" class="profile-img">
-            <p>Welcome! I am Brian Odhiambo, a dedicated software developer and Mining and Mineral Processing Engineer. With a strong foundation in programming languages such as C and Java, I excel in Android and web development. My passion lies in creating innovative solutions that enhance productivity and user experience.</p>
-            <p>Currently, I serve as the Secretary General of the Mining Engineers Society of Kenya at JKUAT, where I actively promote collaboration within the engineering community and advocate for the interests of my peers. My leadership roles have honed my organizational skills and strengthened my commitment to excellence.</p>
-            <p>As the founder of the iskify360 platform, I am driven by a desire to merge technology with practical applications, providing users with tools to effectively manage their academic journey. I am always eager to learn about emerging technologies and how they can transform our world.</p>
-            <p>Let's connect and explore how we can collaborate to build the future.</p>
+            <div class="profile-container">
+                <img src="engineer2.jpg" alt="Portrait of Engineer Brian Odhiambo showcasing his skills in engineering and software development" class="profile-img">
+                <div class="profile-info">
+                    <div class="slide-in">
+                        <p>Hello! I am Engineer Brian Odhiambo, a professional skilled in <strong>Mining and Mineral Processing Engineering</strong> and <strong>Software Development</strong>. With experience in <strong>C, C++ and Java programming</strong>, I focus on <strong>Android and web development</strong>, creating solutions that improve productivity and make life easier for users.</p>
+                    </div>
+                    <div class="slide-in">
+                        <p>My journey into leadership and technology began early. In primary school, I served as the <strong>Secretary ICT</strong>, a role that showcased my early love for computers and the immense trust my teachers had in me. I was entrusted with institutional devices and computers to manage, a responsibility I upheld with dedication. As recognition of my contribution, I received a certification from the institution, which I proudly hold to this day.</p>
+                        </div>
+                         <div class="extra-content hidden">
+                    
+                    <div class="slide-in">
+                        <p>In high school, I took on various leadership roles, including serving as the <strong>Class Captain</strong> and the <strong>Secretary of the Disciplinary Committee</strong>. These roles allowed me to develop strong leadership and organizational skills early on. Currently, I am the <strong>Class Representative</strong> and the <strong>Secretary General of the Mining Engineers Society of Kenya</strong> at JKUAT. My extensive leadership experience enables me to promote teamwork, support my peers, and drive innovation in both academic and professional settings.</p>
+                    </div>
+                     
+                    <div class="slide-in">
+                        <p>As the founder and CEO of <strong>Iskify360</strong>, I aim to merge technology with real-world applications. The platform empowers users to manage their academic and professional lives while staying updated with cutting-edge tools and solutions.</p>
+                    </div>
+                    <div class="slide-in">
+                        <p>My journey into technology started early. As a child, I loved electronic gadgets and even attempted repairs while in primary school. In high school, I was fortunate that the school offered Computer Studies, and I took it as one of my subjects. I excelled in Computer Studies, Mathematics, Geography, Biology, and Chemistry—though I was average in Physics because, well, handling Mathematics and all these sciences wasn’t easy! [Haha!] Despite that, I emerged as the top performer in my KCSE examinations.</p>
+                    </div>
+                    <div class="slide-in">
+                        <p>I applied for Computer Science at the University of Nairobi because, naturally, I’m a "computer person." I also applied for Mining and Mineral Processing Engineering at JKUAT. Even though my A in Biology could guarantee me a medicine course, I chose to ignore it. Ironically, my dad would call me "engineer" every time in high school, but I wanted to be called a computer guru instead! When placement results came, I was surprised to see Mining and Mineral Processing Engineering at JKUAT. Although I wasn’t initially happy, my parents encouraged me to pursue it. Now, I’m deeply engaged in this engineering field while also growing as a software developer.</p>
+                    </div>
+                    <div class="slide-in">
+                        <p>While pursuing my degree, I also studied <strong>computer programming units</strong> as part of the curriculum. These units significantly boosted my knowledge and skills in software development, giving me a deeper understanding of coding and problem-solving in real-world scenarios.</p>
+                    </div>
+                    <div class="slide-in">
+                        <p>I come from a region where mining activities are so limited that people often told me to "just be prepared; after finishing your degree, you'll go back home and farm." It’s true—my home county is Siaya, but thankfully, I had incredibly supportive parents and a remarkable advisor, my then chemistry teacher, who encouraged me to forget what people were saying and focus on what I’ve been called to do. That advice changed my perspective entirely.</p>
+                    </div>
+                    <div class="slide-in">
+                        <p>Now, with my engineering expertise and passion for technology, I am willing to integrate, explore, and develop better ways of utilizing technology to open new avenues for mineral exploration in my home county. Minerals are undoubtedly present in Siaya, and I am determined to contribute to unlocking their potential while also creating opportunities for my community.</p>
+                    </div>
+                    <div class="slide-in">
+                        <p>About software development—this has been a personal journey. I began teaching myself through YouTube, online resources, and even revisited my high school notes because, let’s face it, learning is wide! Currently, I’m working on obtaining a software development certification, whether online or from an educational facility.</p>
+                    </div>
+                    <div class="slide-in">
+                        <p>Beyond my work, I enjoy exploring nature and the environment, which inspires me to seek sustainable solutions in both engineering and software projects. This connection to nature keeps me grounded and creative.</p>
+                    </div>
+                    <div class="slide-in">
+                        <p>Some of my key achievements include being recognized as the <strong>Most Disciplined Student</strong> and receiving the <strong>Best Performing Executive Award</strong>. These accolades reflect my dedication and drive to excel in all aspects of my career.</p>
+                    </div>
+                    <div class="slide-in">
+                        <p>My long-term vision is to advance technology in mining, education, and beyond, creating innovative solutions that make a difference in society. I am always open to learning new technologies and exploring how they can be used to transform our world.</p>
+                    </div>
+                    <div class="slide-in">
+                        <p>For a one-on-one discussion, feel free to reach out through my online agent on this page. Alternatively, visit our platform's website at <a href="https://iskify360.netlify.app" target="_blank" style="color: blue; text-decoration: underline;">Iskify360</a> for professional work or collaboration opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+       <button class="read-more-btn text-blue-500 flex items-center space-x-2 text-lg font-medium ml-auto" onclick="toggleContent()">
+                        <span>Read More</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+</section>
+
+         <script>
+         document.addEventListener("DOMContentLoaded", () => {
+    const slideElements = document.querySelectorAll(".slide-in");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // Stop observing once shown
+            }
+        });
+    }, { threshold: 0.1 });  // Configure the threshold for intersection
+
+    // Observe each slide-in element
+    slideElements.forEach(element => {
+        observer.observe(element);
+    });
+});
+function toggleContent() {
+    var extraContent = document.querySelector('.extra-content');
+    var button = document.querySelector('.read-more-btn');
+    var icon = button.querySelector('svg');
+    
+    // Toggle the visibility of the extra content
+    if (extraContent.classList.contains('hidden')) {
+        extraContent.classList.remove('hidden');
+        button.innerHTML = 'Read Less <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+    } else {
+    
+    var featuredProjects = document.querySelector('.about-section');  
+    featuredProjects.scrollIntoView({ behavior: 'smooth' });
+        extraContent.classList.add('hidden');
+        button.innerHTML = 'Read More <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+    }
+}
+         </script>
+     </style>
+     <section id="about" class="about-section">
+    
+       <!-- Core Values Section -->
+<div class="values mt-8">
+    <h3 class="text-3xl font-bold text-center mb-6 animate__animated animate__fadeIn animate__delay-1s" style= "color: #2c3e50;">
+    CORE VALUES
+</h3>
+    <ul class="list-disc space-y-6 text-lg text-gray-800 mx-auto max-w-2xl">
+        <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-1s">
+            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xl"></i> Integrity in every action
+        </li>
+        <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-2s">
+            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xl"></i> Innovation in problem-solving
+        </li>
+        <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-3s">
+            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xl"></i> Commitment to lifelong learning
+        </li>
+        <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-4s">
+            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xl"></i> Leadership through collaboration
+        </li>
+    </ul>
+</div>   
+</section>
+<style>
+    /* About Section */
+/* About section */
+.about-section {
+    background: linear-gradient(to right, #f5f5f5, #dce6f1); /* Smooth gradient background */
+    padding: 50px 20px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px; /* Rounded corners for modern look */
+}
+
+.about-section h2 {
+    text-align: center;
+    font-size: 2rem;  /* Adjusted font size for laptops */
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* About content container */
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Profile container */
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 5px solid #3498db; /* Border around the image */
+}
+
+/* Hover effect for profile image */
+.profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+    max-width: 650px;
+    line-height: 1.7;
+    color: #2c3e50;
+    font-size: 1.15rem;
+    text-align: justify;
+    padding-right: 30px;
+    position: relative;
+}
+
+/* Adding dynamic underline to paragraphs */
+.profile-info p {
+    margin-bottom: 20px;
+}
+
+.profile-info p:before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 40px;
+    background-color: #3498db;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    transition: width 0.3s ease;
+}
+
+.profile-info p:hover:before {
+    width: 100px;
+}
+
+/* Mobile to tablet view adjustments */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-img {
+        margin-bottom: 20px;
+    }
+
+    .profile-info {
+        padding-right: 0;
+    }
+
+    .about-section h2 {
+        font-size: 2.2rem; /* Slightly bigger title on smaller screens */
+    }
+}
+
+/* Laptop and larger screen (min-width 1024px) */
+@media (min-width: 1024px) {
+    .about-section {
+        padding: 50px 80px; /* More padding on larger screens */
+    }
+
+    .about-section h2 {
+        font-size: 2.5rem; /* Larger title for better readability */
+    }
+
+    .profile-container {
+        gap: 40px; /* Adjust gap between profile image and info */
+    }
+
+    .profile-info {
+        font-size: 1.2rem; /* Slightly larger text for readability */
+    }
+
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.chat-banner {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.2); /* Dark background with some transparency */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Smooth transition for transparency */
+}
+
+.chat-banner.transparent {
+    opacity: 0.1; /* Makes the banner less visible */
+}
+</style>
+
+   <div class="chat-banner" id="chatBanner" onclick="openWhatsApp()">
+    <p>My agent is online now, let's chat!</p>
+</div>
+<script>
+    let banner = document.getElementById("chatBanner");
+let timeout;
+
+document.addEventListener("mousemove", () => handleInteraction());
+document.addEventListener("keydown", () => handleInteraction());
+
+function handleInteraction() {
+    clearTimeout(timeout);
+    banner.classList.add("transparent");
+    timeout = setTimeout(() => {
+        banner.classList.remove("transparent");
+    }, 2000); // Banner becomes fully visible after 2 seconds of no interaction
+}
+
+</script>
+    
+
+<section id="projects" class="projects-section">
+    <div class="container">
+        <h2 style="text-align: center; font-family: 'Arial', sans-serif; font-size: 2.5rem; margin-bottom: 20px; color: #2c3e50; font-weight: bold;">FEATURED PROJECTS</h2>
+        <div class="projects-grid" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+<!-- Project Card 1 -->
+<div class="project-card" style="background: linear-gradient(135deg, #6dd5fa, #2980b9); border-radius: 15px; padding: 20px; width: 100%; max-width: 400px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); color: #fff;">
+    <div style="width: 100%; height: 0; padding-bottom: 56.25%; position: relative; margin-bottom: 15px;">
+        <img src="i_3601.png" alt="Iskify360 Platform Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+    </div>
+    <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; font-semibold; margin-bottom: 10px;"></h3>
+    <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; line-height: 1.5; margin-bottom: 20px;">
+        Iskify360 is a universally accessible digital platform, powering innovative solutions like the I360 Android application and i360 Online communication platform. These tools are designed to enhance productivity, engagement, and connectivity for users worldwide. 
+        <br><br>
+        The I360 Android app offers not only essential student tools, such as performance analysis, assignment tracking, and real-time notifications, but also advanced media and video functionality. This makes it a versatile platform suitable for learners, professionals, and anyone looking for a powerful multimedia experience. Whether for academic purposes or entertainment, I360, powered by Iskify360, has you covered.
+    </p>
+    <a href="https://iskify360.netlify.app/" class="project-link" style="font-family: 'Arial', sans-serif; font-size: 1rem; color: #ecf0f1; text-decoration: underline; font-weight: bold;">Discover More</a>
+</div>
+            <!-- Project Card 2 -->
+            <div class="project-card" style="background: linear-gradient(135deg, #85d8ce, #007991); border-radius: 15px; padding: 20px; width: 100%; max-width: 400px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); color: #fff;">
+                <div style="font-size: 50px; margin-bottom: 15px;">💬</div>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">I360 Oline Platform</h3>
+                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; line-height: 1.5; margin-bottom: 20px;">
+                    A real-time chat platform with rich messaging capabilities, online/offline tracking, and file sharing for seamless communication.
+                </p>
+                <a href="https://iskify360.netlify.app/authentication_section" class="project-link" style="font-family: 'Arial', sans-serif; font-size: 1rem; color: #ecf0f1; text-decoration: underline; font-weight: bold;">Try It Out</a>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card" style="background: linear-gradient(135deg, #9face6, #743ad5); border-radius: 15px; padding: 20px; width: 100%; max-width: 400px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); color: #fff;">
+                <div style="font-size: 50px; margin-bottom: 15px;">🔬</div>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Ceramics Presentation</h3>
+                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; line-height: 1.5; margin-bottom: 20px;">
+                    Exploring the significance, recycling, and economic impact of ceramics in material science.
+                </p>
+                <a href="https://iskify360.netlify.app/ceramics" class="project-link" style="font-family: 'Arial', sans-serif; font-size: 1rem; color: #ecf0f1; text-decoration: underline; font-weight: bold;">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+        <section id="skills" class="skills-section" style="background: linear-gradient(135deg, #4e73df, #1e3c72); padding: 50px 0;">
+    <div class="container">
+        <h2 style="font-family: 'Roboto', sans-serif; color: #fff; font-size: 2.5rem; text-align: center; margin-bottom: 30px;">Skills</h2>
+        <div class="skills-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 30px;">
+            <!-- Skill 1 -->
+            <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
+                <i class="fas fa-code" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Programming Languages</h3>
+                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Proficient in C, C++, and Java programming languages, building robust solutions with an emphasis on performance and scalability.</p>
+            </div>
+            <!-- Skill 2 -->
+            <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
+                <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Android & Web Development</h3>
+                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Expertise in developing responsive, high-performance Android and web applications to solve real-world problems.</p>
+                                                                                                                               </div>
+                                                                                                                               <!-- Skill 3 -->
+            <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
+                <i class="fas fa-briefcase" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Microsoft Office Suite</h3>
+                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Proficient in utilizing Microsoft Office Suite for documentation, presentations, and data management, ensuring efficient workflows.</p>
+            </div>
+            <!-- Skill 4 -->
+            <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
+                <i class="fas fa-wrench" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Electronics Analysis & Repair</h3>
+                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Skilled in analyzing and repairing electronics, from basic troubleshooting to advanced diagnostics and component-level repairs.</p>
+            </div>
+            <!-- Skill 5 -->
+            <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
+                <i class="fas fa-users" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Leadership & Organizational Skills</h3>
+                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Strong leadership and organizational abilities developed through roles such as Secretary General, fostering teamwork and managing projects effectively.</p>
+            </div>
         </div>
     </div>
 </section>
 
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <h2>Featured Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>iskify360 Platform</h3>
-                        <p>An all-in-one Android as well as online platform featuring tools such as performance analysis and report generation, note manager, assignment tracker, and much more digital applications. Aimed at enhancing users productivity.</p>
-                        <a href="https://iskify360.netlify.app/" class="project-link">Discover More</a>
-                    </div>
-                    <div class="project-card">
-                        <h3>i360 Online</h3>
-                        <p>A real-time chat platform with rich messaging capabilities. Includes online/offline tracking and file sharing for seamless communication.</p>
-                        <a href="https://iskify360.netlify.app/authentication_section" class="project-link">Try It Out</a>
-                    </div>
-                    <div class="project-card">
-                        <h3>Ceramics Presentation</h3>
-                        <p>Exploring the significance, recycling, and economic impact of ceramics in material science. Research is ongoing.</p>
-                        <a href="https://iskify360.netlify.app/ceramics" class="project-link">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="skills-section">
-            <div class="container">
-                <h2>Skills</h2>
-                <ul class="skills-list">
-                    <li>Proficient in C, C++ and Java programming languages</li>
-                    <li>Expertise in Android and web development</li>
-                    <li>Microsoft Office Suite</li>
-                    <li>Electronics analysis and repair</li>
-                    <li>Leadership and organizational skills</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="resume" class="resume-section">
-            <div class="container">
-                <h2>Resume/CV</h2>
-                <p>You can view and download my resume below:</p>
-                <a href="resume.pdf" class="resume-link">Download Resume</a>
-            </div>
-        </section>
-
-
-
-       <section id="certifications" class="certifications-section">
+       <section id="certifications" class="certifications-section" style="background: #f4f6f9; padding: 50px 0;">
     <div class="container">
-        <h2 style="font-size: 30px;">Certifications and Awards</h2>
-        <ul class="certifications-list">
-            <li>Certified Android Developer</li>
-            <li>Mining Engineer License (Pending)</li>
-            <li>Certified computer technician and administrator</li>
-            <li>Most Disciplined and Performing Student Award in High School</li>
-            <li>Best Performing Executive Award [Secretary Disciplinary Committee]</li>
-            <li>Secretary General MESK and Class Representative in JKUAT</li>
+        <h2 style="font-family: 'Roboto', sans-serif; color: #333; font-size: 2.5rem; text-align: center; margin-bottom: 40px;">Certifications and Awards</h2>
+        <ul class="certifications-list" style="list-style-type: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px;">
+            <!-- Certification 1 -->
+            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
+                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Certified Android Developer</h3>
+            </li>
+            <!-- Certification 2 -->
+            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
+                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Mining Engineer License (Pending)</h3>
+            </li>
+            <!-- Certification 3 -->
+            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
+                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Certified Computer Technician & Administrator</h3>
+            </li>
+            <!-- Certification 4 -->
+            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
+                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Most Disciplined and Performing Student Award in High School</h3>
+            </li>
+            <!-- Certification 5 -->
+            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
+                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Best Performing Executive Award [Secretary Disciplinary Committee]</h3>
+            </li>
+            <!-- Certification 6 -->
+            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
+                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.5rem; margin-bottom: 10px;">Secretary General MESK and Class Representative in JKUAT</h3>
+            </li>
         </ul>
     </div>
 </section>
+      
+      <section id="resume" class="resume-section" style="background: linear-gradient(135deg, #6dd5fa, #2980b9); padding: 50px 0;">
+    <div class="container">
+        <h2 style="font-family: 'Roboto', sans-serif; color: #fff; font-size: 2.5rem; text-align: center; margin-bottom: 20px;">Resume / CV</h2>
+        <p style="font-family: 'Roboto', sans-serif; font-size: 1.1rem; color: #ecf0f1; text-align: center; margin-bottom: 30px;">
+            You can view and download my resume below. For a more detailed look at my qualifications and professional experience, feel free to explore.
+        </p>
+        <div style="text-align: center;">
+            <a href="resume.pdf" class="resume-link" style="font-family: 'Arial', sans-serif; font-size: 1.2rem; color: #2980b9; background-color: #ecf0f1; padding: 12px 30px; text-decoration: none; border-radius: 30px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); transition: background-color 0.3s;">
+                Download Resume
+            </a>
+        </div>
+    </div>
+</section>
 
-<button id="menu-button" class="menu-button">
-                    <span class="material-icons">menu</span>
-                </button>
-
-
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>Contact</h2>
-                <p>Let's work together or get in touch for more details:</p>
-                <ul class="social-media-icons">
-                    <li><a href="mailto:odhisbrayo80@gmail.com" target="_blank" class="email-icon"><i class="fas fa-envelope"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/brian-odhiambo-4646b4327" target="_blank" class="linkedin-icon"><i class="fab fa-linkedin"></i></a></li>
-                    <li><a href="https://www.instagram.com/eng_brayo" target="_blank" class="instagram-icon"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="https://www.facebook.com/brianodhiambo.wuodben" target="_blank" class="facebook-icon"><i class="fab fa-facebook"></i></a></li>
-                </ul>
-            </div>
-        </section>
-
-        <footer>
+<section id="contact" class="contact-section" style="background: linear-gradient(135deg, #2a5298, #6e7f94); padding: 50px 0;">
+    <div class="container">
+        <h2 style="font-family: 'Roboto', sans-serif; color: #fff; font-size: 2.5rem; text-align: center; margin-bottom: 20px; font-weight: 200;">Contact</h2>
+        <p style="font-family: 'Roboto', sans-serif; font-size: 1.2rem; color: #ecf0f1; text-align: center; margin-bottom: 30px; font-weight: 100;">
+            Let's work together or get in touch for more details. Feel free to reach out on any of my social platforms below:
+        </p>
+        <ul class="social-media-icons" style="list-style-type: none; padding: 0; display: flex; justify-content: center; gap: 30px;">
+            <!-- Email Icon -->
+            <li><a href="mailto:odhisbrayo80@gmail.com" target="_blank" class="email-icon" style="font-size: 2rem; color: #fff; transition: transform 0.3s; font-weight: 200;">
+                <i class="fas fa-envelope"></i>
+            </a></li>
+            <!-- LinkedIn Icon -->
+            <li><a href="https://www.linkedin.com/in/brian-odhiambo-4646b4327" target="_blank" class="linkedin-icon" style="font-size: 2rem; color: #fff; transition: transform 0.3s; font-weight: 200;">
+                <i class="fab fa-linkedin"></i>
+            </a></li>
+            <!-- Instagram Icon -->
+            <li><a href="https://www.instagram.com/eng_brayo" target="_blank" class="instagram-icon" style="font-size: 2rem; color: #fff; transition: transform 0.3s; font-weight: 200;">
+                <i class="fab fa-instagram"></i>
+            </a></li>
+            <!-- Facebook Icon -->
+            <li><a href="https://www.facebook.com/brianodhiambo.wuodben" target="_blank" class="facebook-icon" style="font-size: 2rem; color: #fff; transition: transform 0.3s; font-weight: 200;">
+                <i class="fab fa-facebook"></i>
+            </a></li>
+        </ul>
+    </div>
+</section>    
+      <footer>
             <div class="footer-content">
-                <p>&copy; 2024 Engineer Brian Odhiambo. All rights reserved.</p>
+                <p>&copy; 2025 Engineer Brian Odhiambo. All rights reserved.</p>
             </div>
-        </footer>
-
-        <style>
-.certifications-list {
-    padding-left: 0; /* Remove default padding */
-}
-
-.certifications-list li {
-    position: relative; /* Positioning for pseudo-element */
-    padding-left: 20px; /* Space for custom bullet */
-}
-
-.certifications-list li::before {
-    content: ''; /* Create a custom bullet */
-    position: absolute; /* Position it relative to the list item */
-    left: 0; /* Align it to the left */
-    top: 0.5em; /* Center it vertically */
-    width: 6px; /* Bullet width */
-    height: 6px; /* Bullet height */
-    background-color: black; /* Bullet color */
-    border-radius: 50%; /* Make it circular */
-}
-            .social-media-icons {
-                display: flex;
-                list-style: none;
-                padding: 0;
-            }
-
-            .social-media-icons li {
-                margin-left: 15px;
-            }
-
-            .social-media-icons a {
-                font-size: 1.5em;
-                transition: transform 0.3s;
-            }
-
-            .social-media-icons a:hover {
-                transform: scale(1.1);
-            }
-
-            .email-icon i {
-                color: #D44638; /* Gmail red */
-            }
-
-            .linkedin-icon i {
-                color: #0077b5; /* LinkedIn blue */
-            }
-
-            .instagram-icon i {
-                color: #E1306C; /* Instagram gradient pink */
-            }
-
-            .facebook-icon i {
-                color: #1877F2; /* Facebook blue */
-            }
-            .resume-section {
-    padding: 40px 20px; /* Add padding for spacing */
-    background-color: #f0f4f8; /* Light background for contrast */
-    text-align: center; /* Center-align text */
-}
-
-.resume-section h2 {
-    font-size: 30px; /* Font size for the heading */
-    margin-bottom: 15px; /* Space below the heading */
-    color: #333; /* Darker text color for readability */
-}
-
-.resume-section p {
-    font-size: 16px; /* Font size for the paragraph */
-    color: #555; /* Slightly lighter color for paragraph text */
-    margin-bottom: 20px; /* Space below the paragraph */
-}
-
-.resume-link {
-    display: inline-block; /* Make the link a block for better styling */
-    padding: 10px 20px; /* Padding for the link */
-    font-size: 16px; /* Font size for the link */
-    color: #fff; /* White text color */
-    background-color: #007bff; /* Bootstrap primary color */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline from link */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-.resume-link:hover {
-    background-color: #0056b3; /* Darker color on hover */
-}
-            .sidebar {
-    width: 200px; /* Width of the sidebar */
-    background-color: #f4f4f4; /* Light background color */
-    padding: 20px;
-    position: fixed; /* Keep it fixed on the left */
-    height: 100vh; /* Full height of the viewport */
-    overflow-y: auto; /* Allow scrolling if needed */
-    left: -280px; /* Start hidden off-screen */
-    transition: left 0.3s ease; /* Smooth transition for
-    sliding */
-    z-index: 8;
-}
-
-.sidebar.hidden {
-    left: 0; /* Show sidebar when not hidden */
-}
-.close-button {
-    background: none; /* No background */
-    border: none; /* No border */
-    font-size: 24px; /* Font size for the close icon */
-    cursor: pointer; /* Pointer cursor on hover */
-    color: #333; /* Text color */
-    position: absolute; /* Position it in the corner */
-    top: 10px; /* Distance from the top */
-    right: 20px; /* Distance from the right */
-}
-
-.nav-menu {
-    list-style: none;
-    padding: 0;
-}
-
-.nav-menu li {
-    margin: 15px 0; /* Spacing between links */
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #333; /* Text color */
-    font-weight: 600; /* Bold text */
-    transition: color 0.3s;
-}
-
-.nav-menu a:hover {
-    color: #007BFF; /* Change color on hover */
-}
-
-.main {
-    margin-left: 0; /* No margin initially */
-    padding: 20px; /* Padding for the main content */
-    flex-grow: 1; /* Take the remaining space */
-}
- .menu-button {
-    position: fixed; /* Fixed position to keep it at the bottom */
-    bottom: 60px; /* Distance from the bottom of the viewport */
-    right: 20px; /* Distance from the right edge */
-    background-color: #007bff; /* Background color for the button */
-    color: white; /* Text color */
-    border: none; /* Remove default border */
-    border-radius: 50%; /* Make it a circular button */
-    width: 50px; /* Width of the button */
-    height: 50px; /* Height of the button */
-    display: flex; /* Use flexbox for centering the icon */
-    align-items: center; /* Center the icon vertically */
-    justify-content: center; /* Center the icon horizontally */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-.menu-button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-}
-
-            .menu-button .material-icons {
-                font-size: 24px; /* Size of the icon */
-                margin: 0; /* Remove margin */
-            }
-
-        </style>
-        <script>
-        const menuButton = document.getElementById('menu-button');
-        const closeButton = document.getElementById('close-button');
-        const sidebar = document.getElementById('sidebar');
-
-        menuButton.addEventListener('click', () => {
-            sidebar.classList.toggle('hidden');
-        });
-
-        closeButton.addEventListener('click', () => {
-            sidebar.classList.toggle('hidden'); // Hide the sidebar when X is clicked
-        });
-    </script>
+        </footer>     
     </main>
 </body>
-</html>
+                </html>
+    
