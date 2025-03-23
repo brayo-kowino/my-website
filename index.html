@@ -42,22 +42,18 @@
 </head>
 <body>
     <header class="hero-section">
-    <div class="container">
-        <div class="hero-content">
-           
-            <h1>
-  Engineer Brian Odhiambo<span class="cursor">|</span>
-</h1>
-            <p id="dynamic-text" class="slide-up"></p>
-            <div class="hero-buttons">
-                <a href="#about" class="btn-primary">Learn More</a>
-                <a href="#projects" class="btn-secondary">Explore My Work</a>
-            </div>
-        </div>
-    </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="text-content">
+                    <h1>Engineer Brian Odhiambo<span class="cursor">|</span></h1>
+                    <p id="dynamic-text" class="slide-up"></p>
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn-primary">Learn More</a>
+                        <a href="#projects" class="btn-secondary">Explore My Work</a>
+                    </div>
+                </div>
 
-    
-    <!-- Social Media Links (Top) -->
+                 <!-- Social Media Links (Top) -->
     <div class="social-media-links-top">
         <a href="https://facebook.com/brianodhiambo.wuodben" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://linkedin.com/in/brian-odhiambo-4646b4327" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -65,25 +61,18 @@
         <a href="https://twitter.com/BrianOdhia67569" target="_blank"><i class="fab fa-twitter"></i></a>
        
     </div>
-        
-
-    <!-- Scroll Down Indicator -->
-    <a href="#about" class="scroll-down">
-        <i class="arrow-icon">↓</i>
-    </a>
-
-    <!-- Video Section -->
-    <section class="video-section" id="video-section">
-        <h2>Watch My Story</h2>
-        <div class="video-wrapper">
-            <video id="video" width="100%" height="auto" controls preload="none" class="video-player">
-                <source src="proffession.mp4" type="video/mp4">
-                <p>Your browser doesn't support the video tag.</p>
-            </video>
+                <div class="video-section" id="video-section">
+                    <h2>Watch My Story</h2>
+                    <div class="video-wrapper">
+                        <video id="video" width="100%" height="auto" controls preload="none" class="video-player">
+                            <source src="proffession.mp4" type="video/mp4">
+                            <p>Your browser doesn't support the video tag.</p>
+                        </video>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
-
-   </header>
+    </header>
 
 <style>
 /* Social Media Links (Top) */
@@ -202,35 +191,55 @@
 /* Laptop and larger screen adjustments (min-width 1024px) */
 @media (min-width: 1024px) {
     .hero-section {
-        height: 100vh; /* Reduce the height of the hero section */
-        padding: 30px 0; /* Add more space around the content */
+        height: 100vh; /* Full viewport height */
+        padding: 30px 5%; /* Add space on both sides */
+        display: flex; /* Make the section a flex container */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Keep everything in place */
     }
 
-    .hero-content h1 {
-        font-size: 4rem; /* Larger heading for better readability */
-        margin-bottom: 20px;
+    .hero-content {
+        display: flex; /* Arrange content horizontally */
+        flex-direction: row; /* Ensure text and video are side by side */
+        align-items: center; /* Align both sections */
+        justify-content: space-between; /* Spread content evenly */
+        width: 100%; /* Make sure it uses full width */
+        max-width: 1200px; /* Keep it from stretching too wide */
+        margin: 0 auto; /* Center the content */
     }
 
-    .hero-content p {
-        font-size: 1.8rem; /* Larger paragraph text for better readability */
-        margin-bottom: 20px;
+    .hero-buttons {
+        margin-top: 80px; /* Add space between text and buttons */
+    }
+
+    .text-content {
+        flex: 1; /* Allow it to grow but take equal space */
+        max-width: 45%; /* Set a reasonable limit */
+        text-align: left; /* Align text properly */
     }
 
     .video-section {
-        height: 60vh; /* Adjust video section height for laptops */
-        width: 80%;
+        flex: 1; /* Make it equal width as text */
+        max-width: 45%; /* Prevent it from overflowing */
+        height: auto;
+        display: flex;
+        justify-content: center; /* Center the video */
+        align-items: center;
     }
 
     .video-wrapper {
-        max-width: 80%; /* Allow for a bit of padding on the sides */
-        
+        width: 100%; /* Ensure it takes full width */
     }
 
     .video-player {
         width: 100%;
-        height: 45vh;
-        object-fit: contain; /* Prevent video from stretching or cutting off */
+        height: auto; /* Keep proportions */
+        max-height: 80vh;
+        object-fit: contain; /* Prevent cropping */
     }
+}
+
+
 
     /* Position the social media links towards the top-right corner on larger screens */
     .social-media-links-top {
