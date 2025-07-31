@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Girlfriend's Day 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: #fddde6;
+      color: #333;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      z-index: -1;
+      animation: zoom 30s infinite alternate ease-in-out;
+    }
+
+    @keyframes zoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.8); }
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #ff4f81;
+      text-shadow: 2px 2px 5px white;
+      margin: 20px 0 10px;
+      text-align: center;
+    }
+
+    .card-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 100px);
+      padding: 10px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 90%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-between;
+    }
+
+    .message {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      overflow-y: auto;
+      max-height: 400px;
+      padding-right: 10px;
+    }
+
+    .message::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .message::-webkit-scrollbar-thumb {
+      background: #ff69b4;
+      border-radius: 10px;
+    }
+
+    .footer {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .heart {
+      font-size: 2rem;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .floating-heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      clip-path: path('M10 30 C10 20, 0 15, 10 5 C20 15, 10 20, 10 30');
+      animation: float 10s linear infinite;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(1); opacity: 0.7; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    #countdown {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #ff4f81;
+      font-size: 1.1rem;
+    }
+
+    .surprise-btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-family: 'Pacifico', cursive;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    .surprise-btn:hover {
+      background-color: #ff1493;
+    }
+
+    .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  text-align: center;
+  z-index: 10;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  max-width: 700px; /* Increased from 90% or 250px-like limitation */
+  width: 90%;
+  opacity: 0;
+}
+
+    .popup.show {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    .popup img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 15px;
+      margin-top: 15px;
+    }
+
+    .popup h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+
+    .popup p {
+      font-size: 1rem;
+      color: #444;
+      transition: opacity 1s ease;
+      min-height: 70px;
+    }
+
+    .popup .close-btn {
+      margin-top: 15px;
+      padding: 8px 16px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 20px;
+      background-color: #e91e63;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2.5rem; }
+      .message { font-size: 1rem; max-height: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <audio id="bgMusic" autoplay loop style="display:none">
+    <source src="https://cdn.pixabay.com/audio/2022/10/30/audio_88c8d349e3.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>Happy Girlfriend's Day 💖</h1>
+
+  <div class="card-wrapper">
+  <div class="card">
+    <div class="message">
+      Happy Girlfriend’s Day, baby 💖  
+      <br /><br />
+      Today is all about you. You're beautiful, sexy, sweet and everything I never knew I needed.  
+      <br /><br />
+      Your voice, your heart, your mind, your touch (ukinishika)… even how you breathe turns me on.  
+      <br /><br />
+      Nimejaribu kutafuta maneno ya kuelezea vile nakuhisi… lakini hakuna lugha inaweza beba hii upendo niliyo nayo kwako.  
+      <br /><br />
+      You made me believe love isn’t just real it’s you (My Milla❤️).  
+      <br /><br />
+      Nakupenda zaidi ya vile maneno yanaweza sema. Hadi pumzi yangu ya mwisho, it’s you, always you.  
+      <br /><br />
+      <span class="heart">❤️</span>
+      <div id="countdown"></div>
+      <button class="surprise-btn" onclick="showSurprise()">Click for a surprise 💌</button>
+    </div>
+    <div class="footer">Forever yours,<br/>Brayo wako❤️❤️</div>
+  </div>
+</div>
+
+  <!-- ❤️ Surprise Popup -->
+  <div class="popup" id="popup">
+    <h2>My One and Only 💗</h2>
+    <p id="romanticText">Just when I think I couldn’t love you more, you prove me wrong — every single day.</p>
+    <img src="love.jpeg" alt="Romantic">
+    <button class="close-btn" onclick="hideSurprise()">Close</button>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+
+  <script>
+    const messages = [
+      "You’re not just my girlfriend, you're my peace, my home, my forever person.",
+      "Every moment spent with you feels like a dream I never want to wake up from.",
+      "You have the most beautiful soul, and I fall for it every single day.",
+      "Being with you turns ordinary days into magical memories beb nakupenda sana!.",
+      "You're the love I prayed for, and now I get to call you mine. ❤️",
+      "No poem or song could ever express how much you mean to me. I just believe you'll forever be mine."
+    ];
+
+    let currentIndex = 0;
+    let interval;
+
+    function showSurprise() {
+      const popup = document.getElementById('popup');
+      popup.classList.add('show');
+      const textElement = document.getElementById('romanticText');
+
+      textElement.textContent = messages[currentIndex];
+      interval = setInterval(() => {
+        textElement.style.opacity = 0;
+        setTimeout(() => {
+          currentIndex = (currentIndex + 1) % messages.length;
+          textElement.textContent = messages[currentIndex];
+          textElement.style.opacity = 1;
+        }, 1000);
+      }, 5000);
+    }
+
+    function hideSurprise() {
+      document.getElementById('popup').classList.remove('show');
+      clearInterval(interval);
+      currentIndex = 0;
+    }
+  </script>
+
+  <script>
+    document.body.addEventListener('click', function () {
+      const music = document.getElementById('bgMusic');
+      if (music.paused) {
+        music.play();
+      }
+    }, { once: true });
+  </script>
+</body>
+</html>
