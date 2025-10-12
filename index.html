@@ -56,7 +56,7 @@
             <div class="hero-content">
                 <div class="text-content">
                     <h1>Eng. Brian Odhiambo<span class="cursor">|</span></h1>
-                    <p id="dynamic-text" class="slide-up" style="padding: 4px; background: linear-gradient(135deg, #1e3b7248, #2a529800); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%); padding: 10px; border-left: 5px solid #ffffff; border-top: 5px solid #ffffff;"></p>
+                    
                     <div class="hero-buttons">
                         <a href="#about" class="btn-primary">In the Spotlight</a>
                         <a href="#projects" class="btn-secondary">Explore My Innovations</a>
@@ -77,6 +77,7 @@
     </header>
 
 <style>
+    
 /* Social Media Links (Top) */
 .social-media-links-top {
     position: absolute;
@@ -391,52 +392,6 @@
 </style>
 
 <script>
-    // Titles Array with More Entries
-    const titles = [
-        "Innovative Software Developer",
-        "Tech Enthusiast",
-        "Nature Explorer",
-        "Mining and Mineral Processing Engineer",
-        "Creative Problem Solver",
-        "Leader in Digital Transformation",
-        "Environmental Advocate",
-        "Tech Visionary",
-        "Discipline Enthusiast",
-        "Dynamic Innovator",
-        "Family Person",
-        "Introverted Professional"
-    ];
-
-    let index = 0;
-    const textElement = document.getElementById("dynamic-text");
-
-    function changeTitle() {
-        // Remove the animation class to reset it
-        textElement.classList.remove("slide-up");
-
-        // Wait for a reflow to apply the animation class again
-        setTimeout(() => {
-            textElement.classList.add("slide-up");
-            textElement.textContent = titles[index]; // Update the text
-            index = (index + 1) % titles.length; // Cycle through titles
-        }, 50); // Small delay to trigger reflow
-    }
-
-    // Change title every 3 seconds
-    setInterval(changeTitle, 3000);
-
-    // Function to open WhatsApp with your number
-    function openWhatsApp() {
-        const phoneNumber = "254758330446"; 
-        const message = "Hello Engineer Brian, I hope this message finds you well. I am interested in discussing potential collaboration opportunities and would love to chat with you at your earliest convenience.";
-        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        window.open(url, "_blank");
-    }
-    
-    
-</script>
-
-<script>
     const text = "Engineer Brian Odhiambo";
 const h1 = document.querySelector("h1");
 let indeX = 0;
@@ -469,7 +424,7 @@ document.addEventListener("DOMContentLoaded", typeWriter);
     </h2>
     <p class="text-lg md:text-xl text-indigo-100 mb-8 animate__animated animate__fadeInUp" style="max-width: 500px; margin: 0 auto 2rem auto;">
         A space where <span class="font-semibold text-yellow-300">engineering</span> meets <span class="font-semibold text-green-300">technology</span>.<br>
-        Crafted with passion, built through experience, and driven by innovation.<br>
+        Crafted with passion, built through experience, and driven by innovation and enthusiasm.<br>
         <span class="font-bold text-white">Discover the mind behind the code,</span> the ideas behind the creations.
     </p>
     <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start animate__animated animate__fadeInUp animate__delay-1s">
@@ -501,9 +456,12 @@ document.addEventListener("DOMContentLoaded", typeWriter);
             }
         }
         </style>
+
+        
  <section id="about" class="about-section">
     <div class="container">
         <h2>Who is Brian Odhiambo?</h2>
+        <p id="dynamic-text" class="slide-up" style="text-align: center; font-size: 1.4rem; font-style:bold; font-weight: 900; color: rgba(100, 45, 238, 0.533); min-height: 80px; padding: 4px; background: linear-gradient(135deg, #b4b6b948, #dbe2ee00); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%); padding: 10px; border-left: 5px solid #ffffff; border-top: 5px solid #ddc0c0;"></p>          
         <div class="about-content">
             <div class="profile-container">
                 <figure style="text-align: center; width: 400px !important;">
@@ -577,6 +535,52 @@ document.addEventListener("DOMContentLoaded", typeWriter);
                         </svg>
                     </button>
 </section>
+
+<script>
+    // Titles Array with More Entries
+    const titles = [
+        "Innovative Software Developer",
+        "Tech Enthusiast",
+        "Nature Explorer",
+        "Mining and Mineral Processing Engineer",
+        "Creative Problem Solver",
+        "Leader in Digital Transformation",
+        "Environmental Advocate",
+        "Tech Visionary",
+        "Discipline Enthusiast",
+        "Dynamic Innovator",
+        "Family Person",
+        "Introverted Professional"
+    ];
+
+    let index = 0;
+    const textElement = document.getElementById("dynamic-text");
+
+    function changeTitle() {
+        // Remove the animation class to reset it
+        textElement.classList.remove("slide-up");
+
+        // Wait for a reflow to apply the animation class again
+        setTimeout(() => {
+            textElement.classList.add("slide-up");
+            textElement.textContent = titles[index]; // Update the text
+            index = (index + 1) % titles.length; // Cycle through titles
+        }, 50); // Small delay to trigger reflow
+    }
+
+    // Change title every 3 seconds
+    setInterval(changeTitle, 3000);
+
+    // Function to open WhatsApp with your number
+    function openWhatsApp() {
+        const phoneNumber = "254758330446"; 
+        const message = "Hello Engineer Brian, I hope this message finds you well. I am interested in discussing potential collaboration opportunities and would love to chat with you at your earliest convenience.";
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
+    }
+    
+    
+</script>
 
          <script>
          document.addEventListener("DOMContentLoaded", () => {
