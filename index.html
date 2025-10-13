@@ -405,17 +405,17 @@ document.addEventListener("DOMContentLoaded", typeWriter);
 
     <!-- Hero Text -->
     <div class="w-full md:w-1/2 text-center md:text-left">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 animate__animated animate__fadeInDown" style="text-shadow: 0 4px 24px #0009;">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 animate__animated animate__fadeInDown" style="text-shadow: 0 4px 24px #0009;">
         Welcome to My World
       </h2>
-      <p class="text-lg md:text-xl text-indigo-100 mb-8 animate__animated animate__fadeInUp" style="max-width: 500px; margin: 0 auto 2rem auto;">
+      <p class="text-1xl md:text-xl text-indigo-100 mb-8 animate__animated animate__fadeInUp" style="max-width: 500px; margin: 0 auto 2rem auto;">
         A space where <span class="font-semibold text-yellow-300">engineering</span> meets <span class="font-semibold text-green-300">technology</span>.<br>
         Crafted with passion, built through experience, and driven by innovation and enthusiasm.<br>
         <span class="font-bold text-white">Discover the mind behind the code,</span> the ideas behind the creations.
       </p>
       <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start animate__animated animate__fadeInUp animate__delay-1s">
-        <a href="#projects" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 text-lg">See My Work</a>
-        <a href="#contact" class="bg-white hover:bg-indigo-100 text-indigo-700 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 text-lg">Contact Me</a>
+        <a href="#projects" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-2 px-8 rounded-full shadow-lg transition duration-300 text-1xl">See My Work</a>
+        <a href="#contact" class="bg-white hover:bg-indigo-100 text-indigo-700 font-semibold py-2 px-8 rounded-full shadow-lg transition duration-300 text-1xl">Contact Me</a>
       </div>
     </div>
   </div>
@@ -519,7 +519,7 @@ animateParticles();
                     <img src="engineer2.jpg" 
                          alt="Portrait of Engineer Brian Odhiambo showcasing his skills in engineering and software development" 
                          class="profile-img">
-                    <figcaption style="font-size: 14px; color: #aaa; font-style: italic; margin-top: 5px;">
+                    <figcaption style="font-size: 12px; color: #aaa; font-style: italic; margin-top: 5px; max-width: 80%; margin-left: auto; margin-right: auto;">
                         Image courtesy of Engineer Brian | Taken: March 2024 | Location: Base Titanium Mine Kilifi, Kenya
                     </figcaption>
                 </figure>
@@ -579,7 +579,7 @@ animateParticles();
         </div>
     </div>
     </div>
-       <button class="read-more-btn text-blue-500 flex items-center space-x-2 text-lg font-medium ml-auto" onclick="toggleContent()">
+       <button class="read-more-btn text-blue-500 flex items-center space-x-2 text-1xl font-medium ml-auto" onclick="toggleContent()">
                         <span>Read More</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -588,40 +588,6 @@ animateParticles();
 </section>
 
 <script>
-    // Titles Array with More Entries
-    const titles = [
-        "Innovative Software Developer",
-        "Tech Enthusiast",
-        "Nature Explorer",
-        "Mining and Mineral Processing Engineer",
-        "Creative Problem Solver",
-        "Leader in Digital Transformation",
-        "Environmental Advocate",
-        "Tech Visionary",
-        "Discipline Enthusiast",
-        "Dynamic Innovator",
-        "Family Person",
-        "Introverted Professional"
-    ];
-
-    let index = 0;
-    const textElement = document.getElementById("dynamic-text");
-
-    function changeTitle() {
-        // Remove the animation class to reset it
-        textElement.classList.remove("slide-up");
-
-        // Wait for a reflow to apply the animation class again
-        setTimeout(() => {
-            textElement.classList.add("slide-up");
-            textElement.textContent = titles[index]; // Update the text
-            index = (index + 1) % titles.length; // Cycle through titles
-        }, 50); // Small delay to trigger reflow
-    }
-
-    // Change title every 3 seconds
-    setInterval(changeTitle, 3000);
-
     // Function to open WhatsApp with your number
     function openWhatsApp() {
         const phoneNumber = "254758330446"; 
@@ -673,22 +639,22 @@ function toggleContent() {
      <section id="about" class="about-section">
     
        <!-- Core Values Section -->
-<div class="values mt-8 p-8 bg-transparent rounded-lg shadow-lg">
-    <h3 class="text-2xl font-bold text-center mb-6 animate__animated animate__fadeIn animate__delay-1s" style="color: #2c3e50;">
+<div class="values mt-1 pl-4 pb-4 bg-transparent rounded-lg shadow-lg">
+    <h3 class="text-base font-bold text-center mb-4 animate__animated animate__fadeIn animate__delay-1s" style="color: #2c3e50;">
         CORE VALUES
     </h3>
-    <ul class="list-disc space-y-6 text-lg text-gray-800 mx-auto max-w-2xl">
+    <ul class="list-disc space-y-3 text-sm text-gray-800 mx-auto max-w-2xl">
         <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-1s">
-            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xl"></i> Integrity in every action
+            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xs"></i> Integrity in every action
         </li>
         <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-2s">
-            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xl"></i> Innovation in problem-solving
+            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xs"></i> Innovation in problem-solving
         </li>
         <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-3s">
-            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xl"></i> Commitment to lifelong learning
+            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xs"></i> Commitment to lifelong learning
         </li>
         <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-4s">
-            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xl"></i> Leadership through collaboration
+            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xs"></i> Leadership through collaboration
         </li>
     </ul>
 </div>
@@ -739,8 +705,8 @@ function toggleContent() {
 
 .profile-img {
     border-radius: 50%;
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -757,7 +723,7 @@ function toggleContent() {
     max-width: 650px;
     line-height: 1.7;
     color: #2c3e50;
-    font-size: 1.0rem;
+    font-size: 0.8rem;
     text-align: justify;
     padding-right: 16px;
     position: relative;
@@ -802,7 +768,7 @@ function toggleContent() {
     }
 
     .about-section h2 {
-        font-size: 1.6rem; /* Slightly bigger title on smaller screens */
+        font-size: 1.2rem; /* Slightly bigger title on smaller screens */
     }
 }
 
@@ -882,23 +848,22 @@ function handleInteraction() {
 }
 
 </script>
- <section id="projects" class="projects-section" style="padding: 60px 20px; background: #f7f9fb;">
+ <section id="projects" class="projects-section" style="padding: 30px 20px; background: #f7f9fb;">
   <div class="container" style="max-width: 1100px; margin: 0 auto;">
-    <h2 style="text-align: center; font-family: 'Poppins', sans-serif; font-size: 2rem; margin-bottom: 40px; color: #2c3e50; font-weight: 700; letter-spacing: 1px;">
+    <h2 style="text-align: center; font-family: 'Poppins', sans-serif; font-size: 1.8rem; margin-bottom: 30px; color: #2c3e50; font-weight: 700; letter-spacing: 1px;">
       Featured Projects
     </h2>
 
-    <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-
+    <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
       <!-- Project 1 -->
       <div class="project-card" style="position: relative; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.4s ease, box-shadow 0.4s ease;">
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-30deg); font-size: 3rem; font-weight: 900; color: rgba(255, 0, 0, 0.25); pointer-events: none; animation: pulse 2s infinite; z-index: 8;">
           DISCONTINUED
         </div>
-        <img src="i_3601.png" alt="Iskify360 Platform" style="width: 100%; height: 200px; object-fit: contain; border-radius: 20px 20px 0 0;">
-        <div style="padding: 20px; color: #333; background: #fff; position: relative; z-index: 2;">
-          <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; color: #2c3e50;">Iskify360 Application (Discontinued)</h3>
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #555; margin-bottom: 15px;">
+        <img src="i_3601.png" alt="Iskify360 Platform" style="width: 100%; height: 100px; object-fit: contain; border-radius: 20px 20px 0 0;">
+        <div style="padding: 16px; color: #333; background: #fff; position: relative; z-index: 2;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: #2c3e50;">Iskify360 Application (Discontinued)</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #555; margin-bottom: 15px;">
             The Iskify360 Android app has been officially discontinued. It was once a multipurpose student productivity and communication platform combining learning tools, tracking, and media features. Its legacy continues under the Iskify360 brand.
           </p>
           <a href="https://iskify360.netlify.app/" style="color: #2980b9; font-weight: 600; text-decoration: none; transition: color 0.3s;">Learn More →</a>
@@ -907,10 +872,10 @@ function handleInteraction() {
 
       <!-- Project 2 -->
       <div class="project-card" style="position: relative; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.4s ease, box-shadow 0.4s ease;">
-        <div style="text-align: center; font-size: 3rem; margin-top: 15px;">💬</div>
+        <div style="text-align: center; font-size: 2.5rem; margin-top: 15px;">💬</div>
         <div style="padding: 20px; color: #333; background: #fff;">
-          <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; color: #2c3e50;">Iskify360 Online Platform</h3>
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #555; margin-bottom: 15px;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: #2c3e50;">Iskify360 Online Platform</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #555; margin-bottom: 15px;">
             A real-time chat platform supporting file sharing, online presence tracking, and messaging with smooth UI. It bridges academic and professional communication under the Iskify360 ecosystem.
           </p>
           <a href="https://iskify360.netlify.app/download" style="color: #007991; font-weight: 600; text-decoration: none; transition: color 0.3s;">Try It Out →</a>
@@ -919,10 +884,10 @@ function handleInteraction() {
 
       <!-- Project 3: Live Website Preview -->
       <div class="project-card" style="position: relative; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.4s ease, box-shadow 0.4s ease;">
-        <div style="text-align: center; font-size: 3rem; margin-top: 15px;">🌐</div>
+        <div style="text-align: center; font-size: 2.5rem; margin-top: 15px;">🌐</div>
         <div style="padding: 20px; color: #333; background: #fff;">
-          <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; color: #2c3e50;">AMMPES-JKUAT Official Website</h3>
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #555; margin-bottom: 15px;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: #2c3e50;">AMMPES-JKUAT Official Website</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #555; margin-bottom: 15px;">
             The official website for AMMPES-JKUAT, an association showcasing its digital ecosystem, mission, and community engagement. Built with responsive design and hosted on Netlify.
           </p>
           <!-- Live Preview -->
@@ -966,31 +931,31 @@ iframe:hover {
             <!-- Skill 1 -->
             <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
                 <i class="fas fa-code" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Programming Languages</h3>
-                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Proficient in C, C++, and Java programming languages, building robust solutions with an emphasis on performance and scalability.</p>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800;">Programming Languages</h3>
+                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Proficient in C, C++, Java and web systems programming languages, building robust solutions with an emphasis on performance and scalability.</p>
             </div>
             <!-- Skill 2 -->
             <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
                 <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Android & Web Development</h3>
-                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Expertise in developing responsive, high-performance Android and web applications to solve real-world problems.</p>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800;">Android | Web Development | CAD & 3D modelling</h3>
+                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Expertise in developing responsive, high-performance Android and web applications, highly detailed 2D and 3D components using CAD softwares to solve real-world problems.</p>
                                                                                                                                </div>
                                                                                                                                <!-- Skill 3 -->
             <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
                 <i class="fas fa-briefcase" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Microsoft Office Suite</h3>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800;">Microsoft Office Suite</h3>
                 <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Proficient in utilizing Microsoft Office Suite for documentation, presentations, and data management, ensuring efficient workflows.</p>
             </div>
             <!-- Skill 4 -->
             <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
                 <i class="fas fa-wrench" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Electronics Analysis & Repair</h3>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800;">Electronics Analysis & Repair</h3>
                 <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Skilled in analyzing and repairing electronics, from basic troubleshooting to advanced diagnostics and component-level repairs.</p>
             </div>
             <!-- Skill 5 -->
             <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
                 <i class="fas fa-users" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Leadership & Organizational Skills</h3>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800;">Leadership & Organizational Skills</h3>
                 <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Strong leadership and organizational abilities developed through roles such as Secretary General, fostering teamwork and managing projects effectively.</p>
             </div>
         </div>
@@ -1006,21 +971,21 @@ iframe:hover {
                 <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
                 <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Certified Android Developer</h3>
             </li>
+            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
+                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Certified Python Developer (Python Institute)</h3>
+            </li>
             <!-- Certification 2 -->
             <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
                 <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Mining Engineer License (Pending)</h3>
+                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Mining & Mineral Processing Engineer License (Pending)</h3>
             </li>
             <!-- Certification 3 -->
             <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
                 <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
                 <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Certified Computer Technician & Administrator</h3>
             </li>
-            <!-- Certification 4 -->
-            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
-                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Most Disciplined and Performing Student Award in High School</h3>
-            </li>
+
             <!-- Certification 5 -->
             <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
                 <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
