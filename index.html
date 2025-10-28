@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Engineer Brian Odhiambo's modern portfolio showcasing projects and technical achievements.">
-    <meta property="og:title" content="Engineer Brian Odhiambo - Portfolio">
-<meta property="og:description" content="Portfolio website of Engineer Brian Odhiambo, showcasing projects and technical achievements in software development and engineering.">
-<meta property="og:image" content="https://engineerodhiambo.netlify.app/engineer2.jpg"> <!-- Use full URL for image -->
+    <meta name="description" content="Brian Odhiambo's modern portfolio showcasing projects and technical achievements.">
+    <meta property="og:title" content="Brian Odhiambo - Portfolio">
+<meta property="og:description" content="Portfolio website of Brian Odhiambo, showcasing projects and technical achievements in software development and engineering.">
+<meta property="og:image" content="https://engineerodhiambo.netlify.app/engineer2.jpg"> 
 <meta property="og:url" content="https://engineerodhiambo.netlify.app">
 <meta property="og:type" content="website">
 <meta name="keywords" content="Engineer, Brian Odhiambo, Software Developer, Mining Engineer, Portfolio, Projects, Resume, Skills, Certifications">
-    <title>Engineer Brian Odhiambo, Founder and CEO Iskify360, Software Developer, Mining Engineer, Technical Projects, Resume, Skills, Certifications</title>
+    <title>Brian Odhiambo|Student Engineer|Founder and CEO Iskify360, Software Developer, Mining Engineer, Technical Projects, Resume, Skills, Certifications</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,317 +41,28 @@
 </script>
 </head>
 <body>
-    <header class="hero-section">
-    
-        <!-- Social Media Links (Top) -->
-    <div class="social-media-links-top">
-        <a href="https://facebook.com/brianodhiambo.wuodben" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://linkedin.com/in/brian-odhiambo-4646b4327" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://instagram.com/eng_brayo" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/BrianOdhia67569" target="_blank"><i class="fab fa-twitter"></i></a>
-       
-    </div>
-    </header>
+   <header class="hero-section flex justify-between items-center px-8 py-6 bg-transparent"  style="background-image: url('end_p_bg.png');">
+  <!-- HOBO Logo Text (Left) -->
+  <h3 class="text-5xl md:text-4xl font-extrabold tracking-[0.4em] text-white/90 animate__animated animate__zoomIn animate__delay-2s">
+    <span class="text-indigo-400">H</span>OBO
+  </h3>
 
-<style>
-    
-/* Social Media Links (Top) */
-.social-media-links-top {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 15px;
-    font-size: 1.3rem;
-    z-index: 10;
-}
-
-
-
-.social-media-links-top a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.social-media-links-top a:hover {
-    color: #6e45e2; /* Change icon color on hover */
-}
-
-.hero-section {
-    position: relative;
-    background: linear-gradient(120deg, #1e3c72, #2a5298);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-    background-size: 200% 200%;
-    height: 15vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #ffffff;
-    font-family: "Poppins", sans-serif;
-    overflow: hidden;
-    flex-direction: column;
-    animation: gradientShift 10s ease infinite;
-}
-
-/* Define the gradient color shift animation */
-@keyframes gradientShift {
-    0% {
-        background: linear-gradient(120deg, #1e3c72, #2a5298); /* Deep blue */
-    }
-    25% {
-        background: linear-gradient(120deg, #2a5298, #6e7f94); /* Light blue */
-    }
-    50% {
-        background: linear-gradient(120deg, #6e7f94, #4c6a92); /* Mid-tone blue */
-    }
-    75% {
-        background: linear-gradient(120deg, #4c6a92, #2a5298); /* Return to dark blue */
-    }
-    100% {
-        background: linear-gradient(120deg, #1e3c72, #2a5298); /* Deep blue */
-    }
-}
-
-.hero-content {
-    z-index: 2;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center content */
-    justify-content: center;
-}
-
-.hero-section h1 {
-  display: inline-block;
-  font-size: 3.0rem; /* Larger title on larger screens */
-    font-weight: bold;
-    margin-bottom: 10px;
-  overflow: hidden; /* Ensures the text is clipped as it types */
-  
-  border-right: 3px solid transparent; /* Placeholder for blinking effect */
-  animation: typing 4s steps(30, end), blink-caret 0.7s step-end infinite;
-  font-family: Roboto; /* Typewriter font style */
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 0px;
-    position: relative;
-    opacity: 0;
-}
-
-.hero-buttons a {
-    text-decoration: none;
-    font-weight: normal;
-    font-size: 0.8rem;
-    display: none;
-    transition: background-color 0.3s ease;
-}
-
-/* Laptop and larger screen adjustments (min-width 1024px) */
-@media (min-width: 1024px) {
-    .hero-section {
-        height: 15vh; /* Full viewport height */
-        padding: 30px 6%; /* Add space on both sides */
-        display: flex; /* Make the section a flex container */
-        align-items: center; /* Center vertically */
-        justify-content: center; /* Keep everything in place */
-    }
-
-    .hero-content {
-        display: flex; /* Arrange content horizontally */
-        flex-direction: row; /* Ensure text and video are side by side */
-        align-items: center; /* Align both sections */
-        justify-content: space-between; /* Spread content evenly */
-        width: 100%; /* Make sure it uses full width */
-        max-width: 1200px; /* Keep it from stretching too wide */
-        margin: 0 auto; /* Center the content */
-    }
-
-   
-
-
-.text-content {
-    display: flex;
-    flex-direction: column; 
-    position: relative; /* Required for absolute positioning of the overlay */
-    background: url('https://images.pexels.com/photos/414102/pexels-photo-414102.jpeg');
-    background-size: cover;
-    background-position: center;
-    
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    
-    height: 90vh;
-    flex: 1;
-    max-width: 45%;
-    text-align: left;
-    color: white;
-    overflow: hidden; /* Prevents overflow issues with the overlay */
-}
-
-.hero-buttons {
-    margin-top: auto;
-    width: max-content; /* Keep width limited to button size */
-    /* margin: 0 auto;  Center the buttons */
-}
-
-/* Overlay Effect */
-.text-content::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Adjust opacity for desired darkness */
-    border-radius: 12px; /* Ensure it matches the parent border-radius */
-    z-index: 1;
-}
-
-/* Ensuring text appears above the overlay */
-.text-content * {
-    position: relative;
-    z-index: 2;
-}
-
-
-    .video-section {
-        flex: 1; /* Make it equal width as text */
-        max-width: 45%; /* Prevent it from overflowing */
-        height: 82vh;
-        display: flex;
-        justify-content: center; /* Center the video */
-        align-items: center;
-    }
-
-    .video-wrapper {
-        height: 80vh;
-        width: 100%; /* Ensure it takes full width */
-    }
-
-    .video-player {
-        width: 100%;
-        height: 80vh; /* Keep proportions */
-        max-height: 80vh;
-        object-fit: contain; /* Prevent cropping */
-    }
-}
-
-    /* Position the social media links towards the top-right corner on larger screens */
-    .social-media-links-top {
-        top: 10px;
-        right: 30px;
-        left: auto;
-        transform: translateX(0); /* Remove horizontal centering */
-    }
-
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .hero-section {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-        height: 8vh; /* Am lowering the section height, the content is too samll for full view port height*/
-    }
-
-    .hero-content h1 {
-        display: none;
-        font-size: 2.6rem; /* Smaller heading for mobile */
-    }
-
-    .hero-content p {
-        font-size: 1.0rem; /* Smaller text for mobile */
-    }
-}
-/* Buttons */
-.hero-buttons {
-    padding-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.btn-primary,
-.btn-secondary {
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 25px;
-    font-weight: normal;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary {
-    background: #ffffff;
-    color: #6e45e2;
-    border: 2px solid #ffffff;
-}
-
-.btn-primary:hover {
-    background: #6e45e2;
-    color: #ffffff;
-}
-
-.btn-secondary {
-    background: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-}
-
-.btn-secondary:hover {
-    background: #ffffff;
-    color: #6e45e2;
-}
-
-.scroll-down {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #ffffff;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-
-/* Slide-Up Animation */
-@keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.slide-up {
-    animation: slideUp 0.8s ease-in forwards;
-}
-</style>
-
-<script>
-    const text = "Engineer Brian Odhiambo";
-const h1 = document.querySelector("h1");
-let indeX = 0;
-
-function typeWriter() {
-  if (indeX < text.length) {
-    h1.innerHTML = text.substring(0, indeX + 1) + '<span class="cursor">|</span>';
-    indeX++;
-    setTimeout(typeWriter, 100); // Adjust typing speed
-  } else {
-    // Optional: Remove the cursor after typing
-    document.querySelector(".cursor").style.display = "none";
-  }
-}
-
-document.addEventListener("DOMContentLoaded", typeWriter);
-</script>
+  <!-- Social Media Links (Right) -->
+  <div class="flex space-x-5 text-white text-2xl animate__animated animate__fadeInDown animate__delay-1s">
+    <a href="https://facebook.com/brianodhiambo.wuodben" target="_blank" class="hover:text-indigo-400 transition-colors duration-300">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://linkedin.com/in/brian-odhiambo-4646b4327" target="_blank" class="hover:text-indigo-400 transition-colors duration-300">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://instagram.com/eng_brayo" target="_blank" class="hover:text-indigo-400 transition-colors duration-300">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://twitter.com/BrianOdhia67569" target="_blank" class="hover:text-indigo-400 transition-colors duration-300">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </div>
+</header>
     <main>
 
        <section class="introduction-section relative py-20 overflow-hidden bg-gradient-to-r from-blue-900 via-indigo-800 to-purple-800">
@@ -406,16 +117,17 @@ document.addEventListener("DOMContentLoaded", typeWriter);
     <!-- Hero Text -->
     <div class="w-full md:w-1/2 text-center md:text-left">
       <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 animate__animated animate__fadeInDown" style="text-shadow: 0 4px 24px #0009;">
-        Welcome to My World
+        Welcome to My House
       </h2>
-      <p class="text-1xl md:text-xl text-indigo-100 mb-8 animate__animated animate__fadeInUp" style="max-width: 500px; margin: 0 auto 2rem auto;">
-        A space where <span class="font-semibold text-yellow-300">engineering</span> meets <span class="font-semibold text-green-300">technology</span>.<br>
-        Crafted with passion, built through experience, and driven by innovation and enthusiasm.<br>
-        <span class="font-bold text-white">Discover the mind behind the code,</span> the ideas behind the creations.
-      </p>
+     <p class="text-1xl md:text-xl text-indigo-100 mb-8 animate__animated animate__fadeInUp" style="max-width: 650px; margin: 0 auto 2rem auto;">
+    A space where <span class="font-semibold text-yellow-300">engineering</span> meets 
+    <span class="font-semibold text-green-300">technology</span>; driven by vision, purpose, and innovation.<br>
+    Focused on creating intelligent, reliable, and meaningful digital experiences that inspire change and shape the future.<br><br>
+    <span class="font-bold text-white">More than code, it’s a vision for tomorrow’s technology.</span>
+  </p>
       <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start animate__animated animate__fadeInUp animate__delay-1s">
         <a href="#projects" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-2 px-8 rounded-full shadow-lg transition duration-300 text-1xl">See My Work</a>
-        <a href="#contact" class="bg-white hover:bg-indigo-100 text-indigo-700 font-semibold py-2 px-8 rounded-full shadow-lg transition duration-300 text-1xl">Contact Me</a>
+        <a href="#about" class="bg-white hover:bg-indigo-100 text-indigo-700 font-semibold py-2 px-8 rounded-full shadow-lg transition duration-300 text-1xl">Discover who's behind this</a>
       </div>
     </div>
   </div>
@@ -636,29 +348,75 @@ function toggleContent() {
 }
          </script>
      </style>
-     <section id="about" class="about-section">
-    
-       <!-- Core Values Section -->
-<div class="values mt-1 pl-4 pb-4 bg-transparent rounded-lg shadow-lg">
-    <h3 class="text-base font-bold text-center mb-4 animate__animated animate__fadeIn animate__delay-1s" style="color: #2c3e50;">
-        CORE VALUES
-    </h3>
-    <ul class="list-disc space-y-3 text-sm text-gray-800 mx-auto max-w-2xl">
-        <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-1s">
-            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xs"></i> Integrity in every action
-        </li>
-        <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-2s">
-            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xs"></i> Innovation in problem-solving
-        </li>
-        <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-3s">
-            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xs"></i> Commitment to lifelong learning
-        </li>
-        <li class="flex items-center animate__animated animate__fadeInLeft animate__delay-4s">
-            <i class="fas fa-check-circle text-indigo-600 mr-3 text-xs"></i> Leadership through collaboration
-        </li>
-    </ul>
-</div>
+    <!-- Random Archive Section -->
+<section id="archive" class="py-12 px-6 md:px-16 bg-gradient-to-br from-indigo-50 via-white to-indigo-100">
+  <h2 class="text-2xl md:text-3xl font-extrabold text-center text-gray-800 mb-10 animate__animated animate__fadeInUp">
+    Random Archive
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Photo 1 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp cursor-pointer" onclick="openLightbox('r_start_point.jpg', 'Golden Moments', 'A reminder of where it all began; with my sister left and Dad right; calm, focused, and full of dreams.')">
+      <img src="r_start_point.jpg" alt="Archive photo 1" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold text-gray-800 text-lg mb-1">Golden Moments; my sister(left) and Dad(right)</h3>
+        <p class="text-gray-600 text-sm">A reminder of where it all began: calm, focused, and full of dreams.</p>
+      </div>
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-1s cursor-pointer" onclick="openLightbox('r_nature.jpg', 'Nature & Focus', 'Captured in a quiet moment surrounded by the balance of life.')">
+      <img src="r_nature.jpg" alt="Archive photo 2" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold text-gray-800 text-lg mb-1">Nature & Focus</h3>
+        <p class="text-gray-600 text-sm">Captured in a quiet moment surrounded by the balance of life.</p>
+      </div>
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-2s cursor-pointer" onclick="openLightbox('r_3D_printing.jpg', '3D modelling', 'Designed this \'mini\' cup, and actually printed on an Ultimaker printer machine.')">
+      <img src="r_3D_printing.jpg" alt="Archive photo 3" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold text-gray-800 text-lg mb-1">3D modelling</h3>
+        <p class="text-gray-600 text-sm">Designed this 'mini' cup, and actually printed on an Ultimaker printer machine.</p>
+      </div>
+    </div>
+
+  </div>
 </section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+  <div class="relative max-w-3xl mx-auto animate__animated animate__fadeIn">
+    <img id="lightbox-img" src="" class="rounded-lg shadow-2xl max-h-[80vh] object-contain">
+    <div class="text-center text-white mt-4">
+      <h3 id="lightbox-title" class="font-semibold text-xl mb-1"></h3>
+      <p id="lightbox-desc" class="text-sm text-gray-300"></p>
+    </div>
+    <button onclick="closeLightbox()" class="absolute top-2 right-2 bg-white/20 hover:bg-white/40 text-white rounded-full px-3 py-1 text-lg font-bold">×</button>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function openLightbox(src, title, desc) {
+    document.getElementById('lightbox').classList.remove('hidden');
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-title').textContent = title;
+    document.getElementById('lightbox-desc').textContent = desc;
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.add('hidden');
+  }
+
+  // Optional: close lightbox on background click
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') closeLightbox();
+  });
+</script>
+
 <style>
     /* About Section */
 /* About section */
@@ -848,59 +606,130 @@ function handleInteraction() {
 }
 
 </script>
- <section id="projects" class="projects-section" style="padding: 30px 20px; background: #f7f9fb;">
-  <div class="container" style="max-width: 1100px; margin: 0 auto;">
-    <h2 style="text-align: center; font-family: 'Poppins', sans-serif; font-size: 1.8rem; margin-bottom: 30px; color: #2c3e50; font-weight: 700; letter-spacing: 1px;">
+<section id="projects" class="py-10 bg-gradient-to-br from-gray-600 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] opacity-10"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-14 tracking-wide">
       Featured Projects
     </h2>
 
-    <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+
       <!-- Project 1 -->
-      <div class="project-card" style="position: relative; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.4s ease, box-shadow 0.4s ease;">
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-30deg); font-size: 3rem; font-weight: 900; color: rgba(255, 0, 0, 0.25); pointer-events: none; animation: pulse 2s infinite; z-index: 8;">
-          DISCONTINUED
-        </div>
-        <img src="i_3601.png" alt="Iskify360 Platform" style="width: 100%; height: 100px; object-fit: contain; border-radius: 20px 20px 0 0;">
-        <div style="padding: 16px; color: #333; background: #fff; position: relative; z-index: 2;">
-          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: #2c3e50;">Iskify360 Application (Discontinued)</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: #555; margin-bottom: 15px;">
-            The Iskify360 Android app has been officially discontinued. It was once a multipurpose student productivity and communication platform combining learning tools, tracking, and media features. Its legacy continues under the Iskify360 brand.
+      <div class="group relative bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden shadow-xl transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-red-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="p-6 relative z-10">
+          <h3 class="text-xl font-semibold mb-2 text-white"> <br>Iskify360 Application <span class="text-red-400">(Discontinued)</span></h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">
+            Once a multi-purpose student platform integrating communication, tracking, and productivity tools.
+            Its legacy continues through the Iskify360 ecosystem.
           </p>
-          <a href="https://iskify360.netlify.app/" style="color: #2980b9; font-weight: 600; text-decoration: none; transition: color 0.3s;">Learn More →</a>
+          <a href="https://iskify360.netlify.app/" class="text-blue-300 font-semibold hover:underline">Learn More →</a>
         </div>
+        <span class="absolute top-6 right-6 text-xs bg-red-600/80 text-white px-3 py-1 rounded-full font-bold tracking-wider">DISCONTINUED</span>
       </div>
 
       <!-- Project 2 -->
-      <div class="project-card" style="position: relative; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.4s ease, box-shadow 0.4s ease;">
-        <div style="text-align: center; font-size: 2.5rem; margin-top: 15px;">💬</div>
-        <div style="padding: 20px; color: #333; background: #fff;">
-          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: #2c3e50;">Iskify360 Online Platform</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: #555; margin-bottom: 15px;">
-            A real-time chat platform supporting file sharing, online presence tracking, and messaging with smooth UI. It bridges academic and professional communication under the Iskify360 ecosystem.
+      <div class="group relative bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden shadow-xl transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="p-6 relative z-10">
+          <h3 class="text-xl font-semibold mb-2 text-white">Iskify360 Online Platform</h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">
+            A modern chat system with file sharing, real-time presence, and a smooth responsive UI built under the Iskify360 ecosystem.
           </p>
-          <a href="https://iskify360.netlify.app/download" style="color: #007991; font-weight: 600; text-decoration: none; transition: color 0.3s;">Try It Out →</a>
+          <a href="https://iskify360.netlify.app/download" class="text-cyan-300 font-semibold hover:underline">Try It Out →</a>
         </div>
       </div>
 
-      <!-- Project 3: Live Website Preview -->
-      <div class="project-card" style="position: relative; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.4s ease, box-shadow 0.4s ease;">
-        <div style="text-align: center; font-size: 2.5rem; margin-top: 15px;">🌐</div>
-        <div style="padding: 20px; color: #333; background: #fff;">
-          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: #2c3e50;">AMMPES-JKUAT Official Website</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: #555; margin-bottom: 15px;">
-            The official website for AMMPES-JKUAT, an association showcasing its digital ecosystem, mission, and community engagement. Built with responsive design and hosted on Netlify.
+      <!-- Project 3 -->
+      <div class="group relative bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden shadow-xl transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="p-6 relative z-10">
+          <h3 class="text-xl font-semibold mb-2 text-white">AMMPES-JKUAT Official Website</h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">
+            The digital hub for AMMPES-JKUAT, built with responsive design and hosted on Netlify, showcasing leadership, mission, and innovation.
           </p>
-          <!-- Live Preview -->
-          <div style="border: 2px solid #e0e0e0; border-radius: 10px; overflow: hidden; margin-bottom: 15px; height: 200px;">
-            <img src="image.png" style="width: 100%; height: 100%; border: none;" title="AMMPES Website Preview"></img>
+          <div class="border border-gray-600/40 rounded-xl overflow-hidden mb-4 h-40">
+            <img src="image.png" alt="AMMPES Website Preview" class="w-full h-full object-cover">
           </div>
-          <a href="https://ammpes.netlify.app/" style="color: #743ad5; font-weight: 600; text-decoration: none; transition: color 0.3s;">Visit Site →</a>
+          <a href="https://ammpes.netlify.app/" class="text-indigo-300 font-semibold hover:underline">Visit Site →</a>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
+
+  <!-- Random Archive Section -->
+<section id="archive" class="py-12 px-6 md:px-16 bg-gradient-to-br from-indigo-50 via-white to-indigo-100">
+  <h2 class="text-2xl md:text-3xl font-extrabold text-center text-gray-800 mb-10 animate__animated animate__fadeInUp">
+    Random Archive
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Photo 1 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp cursor-pointer" onclick="openLightbox('r_eng_lab.jpg', '', 'Engineering')">
+      <img src="r_eng_lab.jpg" alt="Archive photo 4" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold text-gray-800 text-lg mb-1">Machines, engineering labs (JKUAT)</h3>
+        <p class="text-gray-600 text-sm">Reminder of the engineering spirit in me, the design, machining, and production. </p>
+      </div>
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-1s cursor-pointer" onclick="openLightbox('r_vdo_prd.jpg', 'Video prodction & high speed projection', '')">
+      <img src="r_vdo_prd.jpg" alt="Archive photo 5" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold text-gray-800 text-lg mb-1">Projection & Video production</h3>
+        <p class="text-gray-600 text-sm">Perfoming a high speed projection and video production at DMMC church service, Nairobi Kenya.</p>
+      </div>
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-2s cursor-pointer" onclick="openLightbox('r_bamb_cmt.jpg', 'Bamburi cement factory', '')">
+      <img src="r_bamb_cmt.jpg" alt="Archive photo 6" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h3 class="font-semibold text-gray-800 text-lg mb-1">Regular field trips</h3>
+        <p class="text-gray-600 text-sm">Bamburi cement factory, Mombasa Kenya.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+  <div class="relative max-w-3xl mx-auto animate__animated animate__fadeIn">
+    <img id="lightbox-img" src="" class="rounded-lg shadow-2xl max-h-[80vh] object-contain">
+    <div class="text-center text-white mt-4">
+      <h3 id="lightbox-title" class="font-semibold text-xl mb-1"></h3>
+      <p id="lightbox-desc" class="text-sm text-gray-300"></p>
+    </div>
+    <button onclick="closeLightbox()" class="absolute top-2 right-2 bg-white/20 hover:bg-white/40 text-white rounded-full px-3 py-1 text-lg font-bold">×</button>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function openLightbox(src, title, desc) {
+    document.getElementById('lightbox').classList.remove('hidden');
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-title').textContent = title;
+    document.getElementById('lightbox-desc').textContent = desc;
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.add('hidden');
+  }
+
+  // Optional: close lightbox on background click
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') closeLightbox();
+  });
+</script>
 
 <!-- Animations and Hover Effects -->
 <style>
@@ -924,103 +753,186 @@ iframe:hover {
 }
 </style>
 
-        <section id="skills" class="skills-section" style="background: linear-gradient(135deg, #4e73df, #1e3c72); padding: 50px 0;">
-    <div class="container">
-        <h2 style="font-family: 'Roboto', sans-serif; color: #fff; font-size: 1.8rem; text-align: center; margin-bottom: 30px;">Skills</h2>
-        <div class="skills-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 30px;">
-            <!-- Skill 1 -->
-            <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
-                <i class="fas fa-code" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800;">Programming Languages</h3>
-                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Proficient in C, C++, Java and web systems programming languages, building robust solutions with an emphasis on performance and scalability.</p>
-            </div>
-            <!-- Skill 2 -->
-            <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
-                <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800;">Android | Web Development | CAD & 3D modelling</h3>
-                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Expertise in developing responsive, high-performance Android and web applications, highly detailed 2D and 3D components using CAD softwares to solve real-world problems.</p>
-                                                                                                                               </div>
-                                                                                                                               <!-- Skill 3 -->
-            <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
-                <i class="fas fa-briefcase" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800;">Microsoft Office Suite</h3>
-                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Proficient in utilizing Microsoft Office Suite for documentation, presentations, and data management, ensuring efficient workflows.</p>
-            </div>
-            <!-- Skill 4 -->
-            <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
-                <i class="fas fa-wrench" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800;">Electronics Analysis & Repair</h3>
-                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Skilled in analyzing and repairing electronics, from basic troubleshooting to advanced diagnostics and component-level repairs.</p>
-            </div>
-            <!-- Skill 5 -->
-            <div class="skill-card" style="background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); color: #333;">
-                <i class="fas fa-users" style="font-size: 2.5rem; color: #1e3c72; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px; font-weight: 800;">Leadership & Organizational Skills</h3>
-                <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; color: #666;">Strong leadership and organizational abilities developed through roles such as Secretary General, fostering teamwork and managing projects effectively.</p>
-            </div>
-        </div>
+       <section id="skills" class="py-20 bg-gradient-to-br from-gray-800 via-purple-900 to-blue-900 text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] opacity-10"></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 tracking-wide">
+      My Core Skills
+    </h2>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Skill Card -->
+      <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-center transform hover:-translate-y-2 transition-all duration-300 hover:bg-white/20">
+        <i class="fas fa-code text-4xl text-yellow-300 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-3">Programming Languages</h3>
+        <p class="text-sm text-gray-200 leading-relaxed">
+          Skilled in <b>C</b>, <b>C++</b>, and <b>Java</b>  building efficient, scalable systems and tools.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-center transform hover:-translate-y-2 transition-all duration-300 hover:bg-white/20">
+        <i class="fas fa-laptop-code text-4xl text-cyan-300 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-3">Android • Web • CAD</h3>
+        <p class="text-sm text-gray-200 leading-relaxed">
+          Developing sleek Android and web apps with precision 2D/3D CAD modelling for problem-solving.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-center transform hover:-translate-y-2 transition-all duration-300 hover:bg-white/20">
+        <i class="fas fa-briefcase text-4xl text-green-300 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-3">Microsoft Office Suite</h3>
+        <p class="text-sm text-gray-200 leading-relaxed">
+          Documenting, analyzing, and presenting data with precision using modern productivity tools.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-center transform hover:-translate-y-2 transition-all duration-300 hover:bg-white/20">
+        <i class="fas fa-tools text-4xl text-pink-300 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-3">Electronics Repair</h3>
+        <p class="text-sm text-gray-200 leading-relaxed">
+          Skilled in diagnosing and repairing electronics  from basic circuits to advanced systems.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-center transform hover:-translate-y-2 transition-all duration-300 hover:bg-white/20">
+        <i class="fas fa-users text-4xl text-indigo-300 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-3">Leadership & Organization</h3>
+        <p class="text-sm text-gray-200 leading-relaxed">
+          Experienced leader and organizer  excelling as Secretary General and Class Representative.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg text-center transform hover:-translate-y-2 transition-all duration-300 hover:bg-white/20">
+        <i class="fas fa-lightbulb text-4xl text-orange-300 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-3">Innovation & Creativity</h3>
+        <p class="text-sm text-gray-200 leading-relaxed">
+          Turning complex challenges into bold, practical, and creative digital solutions.
+        </p>
+      </div>
     </div>
+  </div>
 </section>
 
-       <section id="certifications" class="certifications-section" style="background: #f4f6f9; padding: 50px 0;">
-    <div class="container">
-        <h2 style="font-family: 'Roboto', sans-serif; color: #333; font-size: 1.8rem; text-align: center; margin-bottom: 40px;">Certifications and Awards</h2>
-        <ul class="certifications-list" style="list-style-type: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px;">
-            <!-- Certification 1 -->
-            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
-                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Certified Android Developer</h3>
-            </li>
-            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
-                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Certified Python Developer (Python Institute)</h3>
-            </li>
-            <!-- Certification 2 -->
-            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
-                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Mining & Mineral Processing Engineer License (Pending)</h3>
-            </li>
-            <!-- Certification 3 -->
-            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
-                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Certified Computer Technician & Administrator</h3>
-            </li>
 
-            <!-- Certification 5 -->
-            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
-                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Best Performing Executive Award [Secretary Disciplinary Committee]</h3>
-            </li>
-            <!-- Certification 6 -->
-            <li class="certification-item" style="background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;">
-                <i class="fas fa-certificate" style="font-size: 3rem; color: #2980b9; margin-bottom: 15px;"></i>
-                <h3 style="font-family: 'Arial', sans-serif; font-size: 1.2rem; margin-bottom: 10px;">Secretary General MESK and Class Representative in JKUAT</h3>
-            </li>
-        </ul>
+      <section id="recognition" class="py-20 px-6 md:px-16 bg-gradient-to-br from-gray-50 via-white to-indigo-50">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-3 animate__animated animate__fadeInUp">
+      Highlights & Recognition
+    </h2>
+    <p class="text-gray-600 max-w-2xl mx-auto text-base animate__animated animate__fadeInUp animate__delay-1s">
+      A journey marked by passion, leadership, and a pursuit of excellence.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    <!-- Card 1 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp">
+      <div class="text-indigo-500 text-4xl mb-4">
+        <i class="fas fa-award"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">
+        Best Performing Executive
+      </h3>
+      <p class="text-gray-600 text-sm">
+        Honored for outstanding leadership as Secretary, Disciplinary Committee.
+      </p>
     </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-1s">
+      <div class="text-indigo-500 text-4xl mb-4">
+        <i class="fas fa-user-tie"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">
+        Secretary General, MESK
+      </h3>
+      <p class="text-gray-600 text-sm">
+        Leading the Mining Engineers Society of Kenya at JKUAT, representing innovation and unity.
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-2s">
+      <div class="text-indigo-500 text-4xl mb-4">
+        <i class="fas fa-certificate"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">
+        Certified Android Developer
+      </h3>
+      <p class="text-gray-600 text-sm">
+        Building seamless mobile experiences through efficient and scalable development.
+      </p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-3s">
+      <div class="text-indigo-500 text-4xl mb-4">
+        <i class="fas fa-code"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">
+        Certified Python Developer
+      </h3>
+      <p class="text-gray-600 text-sm">
+        Strong foundations in problem-solving, automation, and AI-driven applications.
+      </p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-4s">
+      <div class="text-indigo-500 text-4xl mb-4">
+        <i class="fas fa-hammer"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">
+        Mining Engineer (License Pending)
+      </h3>
+      <p class="text-gray-600 text-sm">
+        Pursuing professional accreditation in Mining & Mineral Processing Engineering.
+      </p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate__animated animate__fadeInUp animate__delay-5s">
+      <div class="text-indigo-500 text-4xl mb-4">
+        <i class="fas fa-laptop-code"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">
+        Certified Computer Technician
+      </h3>
+      <p class="text-gray-600 text-sm">
+        Skilled in hardware diagnostics, software configuration, and system optimization.
+      </p>
+    </div>
+  </div>
 </section>
+
       
-      <section id="resume" class="resume-section" style="background: linear-gradient(135deg, #6dd5fa, #2980b9); padding: 50px 0;">
-    <div class="container">
-        <h2 style="font-family: 'Roboto', sans-serif; color: #fff; font-size: 1.8rem; text-align: center; margin-bottom: 20px;">Resume / CV</h2>
-        <p style="font-family: 'Roboto', sans-serif; font-size: 1.0rem; color: #ecf0f1; text-align: center; margin-bottom: 30px;">
-            You can view and download my resume below. For a more detailed look at my qualifications and professional experience, feel free to explore.
-        </p>
-        <div style="text-align: center;">
-            <a href="resume.pdf" class="resume-link" style="font-family: 'Arial', sans-serif; font-size: 1.2rem; color: #2980b9; background-color: #ecf0f1; padding: 12px 30px; text-decoration: none; border-radius: 30px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); transition: background-color 0.3s;">
-                Download Resume
-            </a>
-        </div>
-    </div>
-</section>
 
-<section id="contact" class="contact-section" style="background: linear-gradient(135deg, #2a5298, #6e7f94); padding: 50px 0;">
-    <div class="container">
-        <h2 style="font-family: 'Roboto', sans-serif; color: #fff; font-size: 1.8rem; text-align: center; margin-bottom: 20px; font-weight: 200;">Contact</h2>
-        <p style="font-family: 'Roboto', sans-serif; font-size: 1.0rem; color: #ecf0f1; text-align: center; margin-bottom: 30px; font-weight: 100;">
-            Let's work together or get in touch for more details. Feel free to reach out on any of my social platforms below:
-        </p>
-        <ul class="social-media-icons" style="list-style-type: none; padding: 0; display: flex; justify-content: center; gap: 30px;">
+<section id="thankyou" class="relative py-24 px-6 text-center text-white bg-cover bg-center bg-fixed" 
+         style="background-image: url('end_p_bg.png');">
+  
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center space-y-6 animate__animated animate__fadeInUp">
+    <h2 class="text-4xl md:text-6xl font-extrabold tracking-wide drop-shadow-lg">
+      Thank You for Visiting
+    </h2>
+
+    <p class="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+      The House of <span class="font-semibold text-indigo-300">Brian Odhiambo</span>  
+      where ideas are born, refined, and set free.
+    </p>
+
+    <hr class="w-24 border-t-4 border-indigo-400 rounded-full my-4 animate__animated animate__fadeInUp animate__delay-1s">
+
+    <p class="text-sm text-gray-300 uppercase tracking-widest animate__animated animate__fadeIn animate__delay-3s">
+      House of Brian Odhiambo
+    </p>
+
+    <ul class="social-media-icons" style="list-style-type: none; padding: 0; display: flex; justify-content: center; gap: 30px;">
             <!-- Email Icon -->
             <li><a href="mailto:odhisbrayo80@gmail.com" target="_blank" class="email-icon" style="font-size: 2rem; color: #fff; transition: transform 0.3s; font-weight: 200;">
                 <i class="fas fa-envelope"></i>
@@ -1038,14 +950,11 @@ iframe:hover {
                 <i class="fab fa-facebook"></i>
             </a></li>
         </ul>
-    </div>
-</section>    
-      <footer>
-            <div class="footer-content">
-                <p>&copy; 2025 Engineer Brian Odhiambo. All rights reserved.</p>
-            </div>
-        </footer>     
-    </main>
+
+        <p>&copy; 2025 Brian Odhiambo. All rights reserved.</p>
+  </div>
+</section>   
+</main>
 </body>
-                </html>
+</html>
     
