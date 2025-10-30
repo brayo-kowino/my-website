@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+  <title>Iskify360 Connect | Smart360 AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    .nav-blur { backdrop-filter: blur(15px); background: rgba(15,23,42,0.8); }
+  </style>
+</head>
+<body class="bg-[#0f172a] text-white">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-white/10">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Iskify360 | Connect</h1>
+      <ul class="hidden md:flex items-center gap-8 text-gray-300">
+        <li><a href="#home" class="hover:text-cyan-400 transition">Home</a></li>
+        <li><a href="#features" class="hover:text-cyan-400 transition">Features</a></li>
+        <li><a href="#benefits" class="hover:text-cyan-400 transition">Benefits</a></li>
+        <li><a href="#privacy" class="hover:text-cyan-400 transition">Privacy</a></li>
+      </ul>
+      <a href="https://iskify360.netlify.app/download" target="_blank" class="px-5 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl font-semibold shadow-lg transition">Try Now</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 md:px-12 pt-28">
+    <h1 data-aos="fade-up" class="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+      Chat. Connect. Think Smart.
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="100" class="max-w-3xl text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
+      Welcome to <span class="text-cyan-400 font-semibold">Iskify360 Communications Division</span> the all-in-one communication ecosystem that blends real conversations,  
+      social interaction, and the power of <span class="text-white font-medium">Smart360 AI</span>.
+    </p>
+    <div data-aos="zoom-in" data-aos-delay="200" class="flex gap-4">
+      <a href="#features" class="px-8 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-xl font-semibold shadow-lg transition">Explore Features</a>
+      <a href="/privacy-policy.html" class="px-8 py-3 border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 rounded-xl font-semibold transition">Privacy Policy</a>
+    </div>
+    <img data-aos="fade-up" data-aos-delay="300" src="sm360.png" alt="Iskify360 Chat Platform" class="mt-16 rounded-3xl shadow-2xl w-full max-w-4xl object-cover">
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="py-24 px-6 md:px-20 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
+    <h2 data-aos="fade-up" class="text-4xl font-bold text-center mb-16">Core Features</h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+      
+      <!-- Chat -->
+      <div data-aos="fade-up" data-aos-delay="100" class="bg-white/5 backdrop-blur-xl rounded-3xl p-8 hover:-translate-y-2 transition-all shadow-xl border border-gray-700/20">
+        <img src="connexa_chat.jpg" alt="Chat System" class="rounded-2xl mb-6 h-52 w-full object-cover">
+        <h3 class="text-2xl font-semibold mb-3 text-cyan-400">Smart Chat</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Engage in real-time chats with presence indicators, file sharing, and sleek UI animations.  
+          Chat without limits — fast, smooth, and privacy-first.
+        </p>
+      </div>
+
+      <!-- Social -->
+      <div data-aos="fade-up" data-aos-delay="200" class="bg-white/5 backdrop-blur-xl rounded-3xl p-8 hover:-translate-y-2 transition-all shadow-xl border border-gray-700/20">
+        <img src="social.png" alt="Social Platform" class="rounded-2xl mb-6 h-52 w-full object-cover">
+        <h3 class="text-2xl font-semibold mb-3 text-cyan-400">Social Hub</h3>
+        <p class="text-gray-300 leading-relaxed">
+          A community-driven space for students, creators, and professionals.  
+          Share updates, marketplace listings, and announcements all in one ecosystem.
+        </p>
+      </div>
+
+      <!-- AI -->
+      <div data-aos="fade-up" data-aos-delay="300" class="bg-white/5 backdrop-blur-xl rounded-3xl p-8 hover:-translate-y-2 transition-all shadow-xl border border-gray-700/20">
+        <img src="smart_ai.jpg" alt="Smart360 AI" class="rounded-2xl mb-6 h-52 w-full object-cover">
+        <h3 class="text-2xl font-semibold mb-3 text-cyan-400">Smart360 AI</h3>
+        <p class="text-gray-300 leading-relaxed">
+          A built-in experimental AI companion that answers questions, summarizes notes, helps you learn,  
+          and adapts to your personal workflow just to appreciate the work <span class="text-white font-medium"> of The House of Brian Odhiambo</span>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits" class="py-24 px-6 md:px-20 bg-white/5 backdrop-blur-sm border-t border-gray-600/30">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 data-aos="fade-up" class="text-4xl font-bold mb-10">Why Join Iskify360?</h2>
+      <p data-aos="fade-up" data-aos-delay="100" class="max-w-3xl mx-auto text-gray-300 mb-12">
+        This is more than just a futuristic experimental digital platform; it’s a space for meaningful digital connection.  
+        Every feature has been designed to serve people, not algorithms.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        <div data-aos="zoom-in" data-aos-delay="100" class="p-8 bg-[#1e293b] rounded-3xl shadow-xl border border-gray-700/30 hover:-translate-y-1 transition">
+          <h3 class="text-cyan-400 font-semibold text-xl mb-2">Authentic Accounts</h3>
+          <p class="text-gray-300">No bots, no spam every user is verified to keep interactions real and respectful.</p>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="200" class="p-8 bg-[#1e293b] rounded-3xl shadow-xl border border-gray-700/30 hover:-translate-y-1 transition">
+          <h3 class="text-cyan-400 font-semibold text-xl mb-2">Seamless Experience</h3>
+          <p class="text-gray-300">Fast, responsive, and designed to feel intuitive across mobile, desktop, and tablet.</p>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="300" class="p-8 bg-[#1e293b] rounded-3xl shadow-xl border border-gray-700/30 hover:-translate-y-1 transition">
+          <h3 class="text-cyan-400 font-semibold text-xl mb-2">Private & Secure</h3>
+          <p class="text-gray-300">Your data is yours; encrypted, private, and never sold or shared with third parties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY SECTION -->
+  <section id="privacy" class="py-24 px-6 md:px-20 bg-gradient-to-t from-cyan-900/20 to-transparent">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 data-aos="fade-up" class="text-3xl font-bold mb-6">We Respect Your Privacy</h2>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-gray-300 text-lg leading-relaxed mb-8">
+        Our philosophy is simple; transparency and respect.  
+        <br><br>
+        ✅ No hidden trackers  
+        ✅ No selling user data  
+        ✅ Full user control over information  
+        ✅ End-to-end security and encryption
+      </p>
+      <a href="/privacy-policy.html" class="px-10 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-xl font-semibold shadow-lg transition">
+        Read Our Privacy Policy
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 text-center bg-gradient-to-br from-blue-900/20 to-cyan-900/10 border-t border-gray-700/20">
+    <h2 data-aos="fade-up" class="text-4xl font-bold mb-4">Ready to Experience the Future?</h2>
+    <p data-aos="fade-up" data-aos-delay="100" class="text-gray-300 mb-8 text-lg">
+      Join the growing community on Iskify360 today and discover what Smart360 AI can do for you.
+    </p>
+    <a href="https://iskify360.netlify.app/download" target="_blank" class="px-10 py-4 bg-cyan-500 hover:bg-cyan-600 rounded-xl font-semibold shadow-lg transition">
+      Get Started Now
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-10 text-gray-500 text-sm border-t border-gray-700/30">
+    © 2025 Iskify360 • Powered by Smart360 AI • Crafted by Eng. Brian Odhiambo
+  </footer>
+
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true
+    });
+  </script>
+</body>
+</html>
