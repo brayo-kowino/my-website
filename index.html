@@ -122,9 +122,28 @@ p, h1, h2, h3, h4, h5, h6 {
 
   <main>
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center text-white overflow-hidden bg-black" style="margin-top: 68px;">
-  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-40">
-  <source src="intrro_2.mp4" type="video/mp4">
-</video>
+  <!-- Background media container -->
+<div class="absolute inset-0 overflow-hidden">
+  <!-- Desktop/Laptop video -->
+  <video 
+    autoplay 
+    loop 
+    muted 
+    playsinline 
+    preload="none"
+    poster="fallback_hero.png" 
+    class="hidden md:block w-full h-full object-cover will-change-transform backface-hidden opacity-40">
+    <source src="intrro_2.mp4" type="video/mp4">
+  </video>
+
+  <!-- Mobile image fallback -->
+  <img 
+    src="fallback_hero.png" 
+    alt="Background" 
+    class="block md:hidden w-full h-full object-cover opacity-40" 
+    loading="lazy">
+</div>
+
 
   <!-- Gradient overlays -->
   <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-[#0b0b2e]/80 to-black/90"></div>
