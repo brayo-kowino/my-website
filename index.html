@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no">
 
     <meta name="description" content="Brian Odhiambo's modern portfolio showcasing projects and technical achievements.">
     <meta property="og:title" content="Brian Odhiambo - Portfolio">
@@ -99,18 +99,23 @@
 </script>
 
 <style>
-  html {
-  -webkit-text-size-adjust: 100%;
+  html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;          /* Prevent sideways shifting */
+  -webkit-text-size-adjust: 100%; /* Stop browser font resizing */
   text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
-@media (max-width: 768px) {
-  body {
-    transform: scale(0.9);
-    transform-origin: top center;
-  }
+* {
+  box-sizing: border-box;      /* Keeps spacing predictable */
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5;            /* Improves readability */
+  word-wrap: break-word;       /* Prevents text clipping */
+}
 
   </style>
   
