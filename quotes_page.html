@@ -1,175 +1,314 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0">
-  <title>Quotes That Make Me Think — Brian Odhiambo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library of Thought | House of Brian Odhiambo</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Bebas+Neue&family=Playfair+Display:wght@600;800&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #050509;
-      color: #fff;
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
-    }
-
-    section {
-      position: relative;
-      min-height: 100vh;
-      padding: 6rem 1.5rem;
-      background: radial-gradient(circle at top, #0a0a13 0%, #050509 100%);
-      overflow: hidden;
-    }
-
-    h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 5rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #fff;
-    }
-
-    .subtitle {
-      text-align: center;
-      font-style: italic;
-      color: #9aa0ff;
-      margin-bottom: 4rem;
-      font-size: 1.2rem;
-    }
-
-    .quote {
-      max-width: 950px;
-      margin: 4rem auto;
-      font-size: 1.5rem;
-      line-height: 1.8;
-      color: #f5f5f5;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 1.5s forwards;
-    }
-
-    .quote:nth-child(odd) {
-      font-family: 'Playfair Display', serif;
-    }
-
-    .quote:nth-child(even) {
-      font-family: 'Cormorant Garamond', serif;
-    }
-
-    .author {
-      text-align: right;
-      margin-top: 1rem;
-      font-size: 1rem;
-      color: #9aa0ff;
-      letter-spacing: 0.05em;
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Libre Baskerville', 'serif'],
+            display: ['Cinzel', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            paper: '#0a0a0f',
+            card: '#111116',
+            accent: '#818cf8', // Indigo-800
+            gold: '#fbbf24'    // Amber-400
+          },
+          backgroundImage: {
+            'grain': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')",
+          }
+        }
       }
     }
+  </script>
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      opacity: 0.08;
-      z-index: 0;
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #050509; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #818cf8; }
+
+    /* Masonry Layout */
+    .masonry-grid {
+      column-count: 1;
+      column-gap: 1.5rem;
+    }
+    @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+    @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+    
+    .break-inside-avoid {
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
 
-    .content {
-      position: relative;
-      z-index: 2;
-    }
-
-    footer {
-      text-align: center;
-      padding: 4rem 0;
-      font-size: 1rem;
-      color: #888;
-      border-top: 1px solid #222;
-      letter-spacing: 0.05em;
+    /* Selection Color */
+    ::selection {
+      background: #818cf8;
+      color: #000;
     }
   </style>
 </head>
+<body class="bg-paper text-gray-300 min-h-screen relative font-sans">
 
-<body>
-  <section>
-    <div class="overlay"></div>
-    <div class="content">
-      <h1>Quotes That Make Me Think</h1>
-      <p class="subtitle">“Words that stir the mind, ignite the spirit, and sharpen the vision.”</p>
+  <div class="fixed inset-0 bg-grain pointer-events-none z-0 opacity-40"></div>
+  
+  <div class="fixed top-0 left-0 w-[500px] h-[500px] bg-indigo-900/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none"></div>
+  <div class="fixed bottom-0 right-0 w-[500px] h-[500px] bg-amber-900/10 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2 z-0 pointer-events-none"></div>
 
-      <div class="quote">
-        “If you’re going to try, go all the way. Otherwise, don’t even start. This could mean losing girlfriends, wives, relatives and maybe even your mind. 
-        It could mean not eating for three or four days. It could mean freezing on a park bench. It could mean jail. It could mean derision. 
-        It could mean mockery–isolation. Isolation is the gift. All the others are a test of your endurance, of how much you really want to do it. 
-        And, you’ll do it, despite rejection and the worst odds. And it will be better than anything else you can imagine. 
-        If you’re going to try, go all the way. There is no other feeling like that. 
-        You will be alone with the gods, and the nights will flame with fire. 
-        You will ride life straight to perfect laughter. It’s the only good fight there is.”
-        <div class="author">— Charles Bukowski</div>
+ <nav class="fixed top-0 left-0 w-full z-50 border-b border-brand-border bg-[#050509]/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+            <img src="personal_logo_letter_lg.png" onerror="this.style.display='none'" class="h-12 opacity-80">
+            <span class="font-display font-bold text-lg tracking-wider text-white"></span>
+            <span class="inline-block md:inline-block px-2 py-0.5 rounded text-[10px] font-mono bg-blue-900/20 text-blue-500 border border-blue-900/50">WISDOM</span>
+        </div>
+        <nav class="flex items-center gap-6 text-xs font-mono text-gray-500">
+            <span class="hidden md:inline"><span class="text-yellow-600">PERIODICALLY UPDATED</span></span>
+            <a href="index.html" class="text-yellow-600 transition-colors whitespace-nowrap">[RETURN TO BASE]</a>
+        </nav>
+    </div>
+  </nav>
+
+  <main class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20">
+    
+    <header class="text-center mb-24 fade-in">
+      <div class="inline-block px-3 py-1 border border-white/10 rounded-full bg-white/5 mb-6">
+        <span class="text-xs font-mono text-gray-400 tracking-widest">LIBRARY OF THOUGHT</span>
       </div>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-display text-white mb-6 tracking-tight">
+        Echoes of <span class="text-transparent bg-clip-text bg-blue-300">Vision</span>
+      </h1>
+    </header>
 
-      <div class="quote">
-        “The man who moves a mountain begins by carrying away small stones.”
-        <div class="author">— Confucius</div>
-      </div>
+    <div class="masonry-grid">
 
-      <div class="quote">
-        “You have to be willing to look like a fool for what you believe in, because the world won’t understand vision until it manifests.”
-        <div class="author">— Unknown</div>
-      </div>
+      <article class="break-inside-avoid mb-6 group">
+        <div class="bg-card border border-white/5 p-8 rounded-xl hover:border-indigo-500/30 hover:bg-[#15151a] transition-all duration-500 relative overflow-hidden shadow-lg">
+          <div class="absolute -top-4 -left-2 text-8xl font-serif text-white/5 group-hover:text-indigo-500/10 transition-colors">“</div>
+          <p class="font-serif text-gray-300 leading-relaxed relative z-10 text-[0.95rem]">
+            If you’re going to try, go all the way. Otherwise, don’t even start. This could mean losing girlfriends, wives, relatives and maybe even your mind. 
+            It could mean not eating for three or four days. It could mean freezing on a park bench. It could mean jail. It could mean derision. 
+            It could mean mockery–isolation. Isolation is the gift. All the others are a test of your endurance, of how much you really want to do it. 
+            And, you’ll do it, despite rejection and the worst odds. And it will be better than anything else you can imagine. 
+            If you’re going to try, go all the way. There is no other feeling like that. 
+            You will be alone with the gods, and the nights will flame with fire. 
+            You will ride life straight to perfect laughter. It’s the only good fight there is.
+          </p>
+          <div class="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
+            <cite class="not-italic text-sm font-mono text-accent tracking-wider uppercase">Charles Bukowski</cite>
+            <span class="text-xs text-gray-600 font-mono">#GRIT</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="quote">
-        “If you can’t fly, then run. If you can’t run, then walk. If you can’t walk, then crawl, but by all means, keep moving.”
-        <div class="author">— Martin Luther King Jr.</div>
-      </div>
+      <article class="break-inside-avoid mb-6 group">
+        <div class="bg-card border border-white/5 p-8 rounded-xl hover:border-indigo-500/30 hover:bg-[#15151a] transition-all duration-500 relative shadow-lg">
+          <div class="absolute -top-4 -left-2 text-8xl font-serif text-white/5 group-hover:text-indigo-500/10 transition-colors">“</div>
+          <p class="font-serif text-gray-300 leading-relaxed text-lg relative z-10">
+            The ones who are crazy enough to think they can change the world are the ones who do. They see possibilities where others see limitations.
+          </p>
+          <div class="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
+            <cite class="not-italic text-sm font-mono text-accent tracking-wider uppercase">Steve Jobs</cite>
+            <span class="text-xs text-gray-600 font-mono">#VISION</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="quote">
-        “Success is not for the chosen few. It’s for the few who choose to remain consistent, disciplined, and resilient long after excitement fades.”
-        <div class="author">— Anonymous</div>
-      </div>
+      <article class="break-inside-avoid mb-6 group">
+        <div class="bg-card border border-white/5 p-8 rounded-xl hover:border-indigo-500/30 hover:bg-[#15151a] transition-all duration-500 relative shadow-lg">
+           <div class="absolute -top-4 -left-2 text-8xl font-serif text-white/5 group-hover:text-indigo-500/10 transition-colors">“</div>
+          <p class="font-serif text-gray-300 leading-relaxed relative z-10 text-[0.95rem]">
+            If you can't fly, then run. If you can't run, then walk. If you can't walk, then crawl, but by all means, keep moving. 
+            Movement is the essence of life itself. Every step forward, no matter how small, is a victory against stagnation and despair.
+          </p>
+          <div class="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
+            <cite class="not-italic text-sm font-mono text-accent tracking-wider uppercase">M.L. King Jr.</cite>
+            <span class="text-xs text-gray-600 font-mono">#PROGRESS</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="quote">
-        “The ones who are crazy enough to think they can change the world are the ones who do.”
-        <div class="author">— Steve Jobs</div>
-      </div>
+      <article class="break-inside-avoid mb-6 group">
+        <div class="bg-card border border-white/5 p-8 rounded-xl hover:border-indigo-500/30 hover:bg-[#15151a] transition-all duration-500 relative shadow-lg text-center">
+          <p class="font-serif text-white text-xl italic leading-relaxed relative z-10">
+            "The man who moves a mountain begins by carrying away small stones."
+          </p>
+          <div class="mt-6 flex items-center justify-center pt-2">
+            <cite class="not-italic text-xs font-mono text-gray-500 tracking-wider uppercase"> Confucius</cite>
+          </div>
+        </div>
+      </article>
 
-      <div class="quote">
-        “It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better. 
-        The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly; who errs, 
-        who comes short again and again, because there is no effort without error and shortcoming; but who does actually strive to do the deeds; 
-        who knows great enthusiasms, the great devotions; who spends himself in a worthy cause; who at the best knows in the end the triumph of high achievement, 
-        and who at the worst, if he fails, at least fails while daring greatly.”
-        <div class="author">— Theodore Roosevelt</div>
-      </div>
+      <article class="break-inside-avoid mb-6 group">
+        <div class="bg-card border border-white/5 p-8 rounded-xl hover:border-indigo-500/30 hover:bg-[#15151a] transition-all duration-500 relative shadow-lg">
+          <div class="absolute -top-4 -left-2 text-8xl font-serif text-white/5 group-hover:text-indigo-500/10 transition-colors">“</div>
+          <p class="font-serif text-gray-300 leading-relaxed relative z-10 text-[0.95rem]">
+            It is not the critic who counts... The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly... and who at the worst, if he fails, at least fails while daring greatly.
+          </p>
+          <div class="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
+            <cite class="not-italic text-sm font-mono text-accent tracking-wider uppercase">Theodore Roosevelt</cite>
+            <span class="text-xs text-gray-600 font-mono">#COURAGE</span>
+          </div>
+        </div>
+      </article>
 
-      <div class="quote">
-        “When you want something so badly that you’re willing to lose sleep, friends, comfort, and routine for it; that’s when the universe takes you seriously.”
-        <div class="author">— Unknown</div>
-      </div>
+      <article class="break-inside-avoid mb-6 group">
+        <div class="bg-indigo-900/10 border border-indigo-500/20 p-8 rounded-xl hover:border-indigo-500/50 transition-all duration-500 relative shadow-lg">
+          <p class="font-serif text-indigo-100 font-bold text-xl leading-relaxed relative z-10">
+            "Don’t be discouraged. It’s often the last key in the bunch that opens the lock."
+          </p>
+          <div class="mt-4 pt-2">
+             <span class="inline-block w-8 h-1 bg-indigo-500 rounded-full"></span>
+          </div>
+        </div>
+      </article>
 
-      <div class="quote">
-        “One day, all the late nights, the doubt, and the hard choices will make sense. 
-        Keep going you’re building something eternal within yourself.”
-        <div class="author">— Anonymous</div>
-      </div>
+      <article class="break-inside-avoid mb-6 group">
+        <div class="bg-card border border-white/5 p-8 rounded-xl hover:border-indigo-500/30 hover:bg-[#15151a] transition-all duration-500 relative shadow-lg">
+          <div class="absolute -top-4 -left-2 text-8xl font-serif text-white/5 group-hover:text-indigo-500/10 transition-colors">“</div>
+          <p class="font-serif text-gray-300 leading-relaxed relative z-10 text-[0.95rem]">
+            Success is not for the chosen few. It's for the few who choose to remain consistent, disciplined, and resilient long after excitement fades. 
+            This is where most people quit. They mistake the absence of excitement for a sign that they're on the wrong path... 
+            But those who persist through this phase discover something remarkable.
+          </p>
+          <div class="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
+            <cite class="not-italic text-sm font-mono text-accent tracking-wider uppercase">Anonymous</cite>
+            <span class="text-xs text-gray-600 font-mono">#DISCIPLINE</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="break-inside-avoid mb-6 group">
+        <div class="bg-card border border-white/5 p-8 rounded-xl hover:border-indigo-500/30 hover:bg-[#15151a] transition-all duration-500 relative shadow-lg">
+          <p class="font-serif text-gray-300 leading-relaxed text-lg relative z-10">
+            "Great things are not done by impulse, but by a series of small things brought together."
+          </p>
+          <div class="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
+            <cite class="not-italic text-sm font-mono text-accent tracking-wider uppercase">Van Gogh</cite>
+            <span class="text-xs text-gray-600 font-mono">#ART</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="break-inside-avoid mb-6 group">
+        <div class="bg-card border border-white/5 p-8 rounded-xl hover:border-indigo-500/30 hover:bg-[#15151a] transition-all duration-500 relative shadow-lg">
+          <div class="absolute -top-4 -left-2 text-8xl font-serif text-white/5 group-hover:text-indigo-500/10 transition-colors">“</div>
+          <p class="font-serif text-gray-300 leading-relaxed relative z-10 text-[0.95rem]">
+            Don't be pushed around by the fears in your mind. Be led by the dreams in your heart. 
+            When you learn to silence the voice of fear and listen instead to the voice of your deepest aspirations, you unlock a power within yourself.
+          </p>
+          <div class="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
+            <cite class="not-italic text-sm font-mono text-accent tracking-wider uppercase">Roy T. Bennett</cite>
+            <span class="text-xs text-gray-600 font-mono">#HEART</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="break-inside-avoid mb-6 group">
+        <div class="bg-card border border-white/5 p-8 rounded-xl hover:border-indigo-500/30 hover:bg-[#15151a] transition-all duration-500 relative shadow-lg">
+          <p class="font-serif text-gray-300 leading-relaxed relative z-10 text-[0.95rem]">
+            "Success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome."
+          </p>
+          <div class="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
+            <cite class="not-italic text-sm font-mono text-accent tracking-wider uppercase">Booker T. Washington</cite>
+            <span class="text-xs text-gray-600 font-mono">#RESILIENCE</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="break-inside-avoid mb-6 group">
+        <div class="bg-gradient-to-br from-indigo-900/40 to-black border border-indigo-500/30 p-8 rounded-xl hover:border-indigo-400 transition-all duration-500 relative shadow-lg">
+          <p class="font-serif text-white text-lg italic leading-relaxed relative z-10">
+            "One day, all the late nights, the doubt, and the hard choices will make sense. Keep going you’re building something eternal within yourself."
+          </p>
+          <div class="mt-6 flex items-center justify-between border-t border-indigo-500/20 pt-4">
+            <cite class="not-italic text-sm font-mono text-indigo-300 tracking-wider uppercase">Note to Self</cite>
+            <span class="text-xl">***</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <section class="relative z-10 max-w-2xl mx-auto px-6 py-20">
+    <div class="bg-card border border-white/5 p-8 rounded-xl">
+      <h2 class="text-2xl md:text-3xl font-display text-white mb-2 tracking-tight">Share Your Thought</h2>
+      <p class="text-gray-400 text-sm mb-6 font-serif">Have a quote or insight to contribute? Submit it below for consideration.</p>
+      
+      <form name="thoughts" method="POST" netlify class="space-y-4">
+        <div>
+          <label class="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wider">Your Thought</label>
+          <textarea name="thought" required placeholder="Enter your quote or insight..." class="w-full bg-[#15151a] border border-white/10 rounded-lg p-4 text-gray-300 font-serif focus:border-indigo-500/50 focus:outline-none resize-none" rows="4"></textarea>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wider">Author</label>
+            <input type="text" name="author" required placeholder="e.g., Anonymous" class="w-full bg-[#15151a] border border-white/10 rounded-lg p-3 text-gray-300 focus:border-indigo-500/50 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wider">Tag</label>
+            <input type="text" name="tag" placeholder="e.g., #WISDOM" class="w-full bg-[#15151a] border border-white/10 rounded-lg p-3 text-gray-300 focus:border-indigo-500/50 focus:outline-none">
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wider">Your Email</label>
+          <input type="email" name="email" required placeholder="name@domain.com" class="w-full bg-[#15151a] border border-white/10 rounded-lg p-3 text-gray-300 focus:border-indigo-500/50 focus:outline-none">
+        </div>
+        
+        <button type="submit" class="w-full bg-blue-600 hover:bg-indigo-500 text-white font-mono text-sm tracking-wider py-3 rounded-lg transition-colors duration-300 mt-6 uppercase font-semibold">
+          Submit Thought
+        </button>
+      </form>
+      
+      <p class="text-xs text-gray-500 text-center mt-4 font-mono">Your submission will be reviewed before appearing on the library.</p>
     </div>
   </section>
 
-  <footer>
-    © 2025 Brian Odhiambo | Inspired by Vision. <br>Driven by Purpose.
+  <footer class="text-center py-12 border-t border-white/5 bg-[#050509]">
+    <div class="flex flex-col items-center gap-4">
+      <div class="w-12 h-1 bg-blue-500 rounded-full mb-2"></div>
+      <p class="text-gray-500 text-sm font-mono tracking-wider">
+        © 2025 THE HOUSE OF BRIAN ODHIAMBO
+      </p>
+      <p class="text-gray-600 text-xs font-serif italic">
+        "Inspired by Vision. Driven by Purpose."
+      </p>
+    </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const articles = document.querySelectorAll('article');
+      articles.forEach((article, index) => {
+        article.style.opacity = '0';
+        article.style.transform = 'translateY(20px)';
+        article.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        
+        // Staggered delay based on index
+        setTimeout(() => {
+          article.style.opacity = '1';
+          article.style.transform = 'translateY(0)';
+        }, 100 * index); 
+      });
+    });
+  </script>
+
 </body>
 </html>

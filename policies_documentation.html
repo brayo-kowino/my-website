@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Protocols | House of Brian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background-color: #050505; 
+            color: #d1d5db;
+        }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Custom Selection Color */
+        ::selection { background: #dc2626; color: white; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+        /* Legal Section Counter */
+        .legal-section { counter-increment: section; }
+        .legal-section h2::before {
+            content: "PROTOCOL " counter(section) " :: ";
+            color: #dc2626; /* Red for strictness */
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-red-900 selection:text-white">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-red-900/30 h-16 flex items-center justify-between px-6">
+        <div class="flex items-center gap-3">
+            <img src="personal_logo_letter_lg.png" onerror="this.style.display='none'" class="h-8 opacity-80">
+            <span class="font-display font-bold text-lg tracking-wider text-white">HOUSE OF BRIAN</span>
+            <span class="hidden md:inline-block px-2 py-0.5 rounded text-[10px] font-mono bg-red-900/20 text-red-500 border border-red-900/50">LEGAL DIVISION</span>
+        </div>
+        <nav class="flex items-center gap-6 text-xs font-mono text-gray-500">
+            <span class="hidden md:inline">STATUS: <span class="text-green-500">ENFORCED</span></span>
+            <a href="index.html" class="hover:text-white transition-colors whitespace-nowrap">[ RETURN TO BASE ]</a>
+        </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto pt-32 pb-20 px-6">
+        
+        <div class="mb-16 border-l-4 border-red-600 pl-6 py-2">
+            <h1 class="font-display text-4xl md:text-6xl font-bold text-white mb-4 uppercase tracking-tight">
+                Terms of Engagement
+            </h1>
+            <p class="text-gray-400 max-w-2xl text-lg">
+                We understand you won't read the last 47 lines of terms either, but here's the deal: we <span class="text-white font-bold">strictly</span> govern the usage, distribution, and interaction with the intellectual property, software, and digital assets of The House of Brian. No exceptions. No shortcuts.
+            </p>
+            <p class="mt-4 font-mono text-xs text-red-500 uppercase tracking-widest">
+                <i></i> Last Revised: December 2025
+            </p>
+        </div>
+
+        <div class="space-y-12">
+
+            <section class="legal-section">
+                <h2 class="text-2xl font-bold text-white mb-4 uppercase tracking-wide">Acceptance of Protocols</h2>
+                <div class="prose prose-invert prose-p:text-gray-400 max-w-none">
+                    <p>
+                        Accessing "The House of Brian" network, including this website, the Connexa Message Gateway, or any associated subdomains, constitutes an immediate and unconditional acceptance of these terms. These protocols are non-negotiable. If you do not agree to these terms, you are directed to <span class="text-white font-bold">terminate your session immediately</span>.
+                    </p>
+                </div>
+            </section>
+
+            <section class="legal-section">
+                <h2 class="text-2xl font-bold text-white mb-4 uppercase tracking-wide">Intellectual Property & Copyright</h2>
+                <div class="prose prose-invert prose-p:text-gray-400 max-w-none bg-gray-900/30 p-6 rounded border border-gray-800">
+                    <p class="mb-4">
+                        All content, including but not limited to source code, algorithms, UI/UX designs, photography, branding, and written content, is the exclusive intellectual property of <strong>Brian Odhiambo</strong> unless explicitly stated otherwise.
+                    </p>
+                    <ul class="list-none space-y-3 pl-0">
+                        <li class="flex gap-3">
+                            <i class="fa-solid fa-ban text-red-500 mt-1"></i>
+                            <span><strong>Strict Prohibition:</strong> You may not mirror, scrape, reproduce, or reverse-engineer any part of this system without express written consent.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fa-solid fa-code text-blue-500 mt-1"></i>
+                            <span><strong>Code Usage:</strong> Snippets explicitly marked as "Open Source" are governed by the MIT License. All other underlying infrastructure code is proprietary and closed-source.</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="legal-section">
+                <h2 class="text-2xl font-bold text-white mb-4 uppercase tracking-wide">Data Collection & Privacy</h2>
+                <div class="prose prose-invert prose-p:text-gray-400 max-w-none bg-gray-900/30 p-6 rounded border border-gray-800">
+                    <p class="mb-4">
+                        When you contact us through Connexa or our official channels, we collect minimal personal data necessary to respond to your inquiries and improve our services.
+                    </p>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-white font-semibold mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-database text-blue-500"></i>
+                                What We Collect
+                            </h4>
+                            <p class="text-sm">Contact information, message content, and anonymous telemetry data (system interactions, error logs, performance metrics) to ensure reliability and security of our infrastructure.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-shield text-green-500"></i>
+                                Our Commitment
+                            </h4>
+                            <ul class="text-sm space-y-2 list-none pl-0">
+                                <li class="flex gap-2"><span class="text-green-500">✓</span> <strong>No Third-Party Sales:</strong> We do not sell, trade, or monetize your data.</li>
+                                <li class="flex gap-2"><span class="text-green-500">✓</span> <strong>No Data Mining:</strong> We have zero affiliation with data mining initiatives or surveillance networks.</li>
+                                <li class="flex gap-2"><span class="text-green-500">✓</span> <strong>Encrypted Transmission:</strong> All communications are transmitted securely over encrypted channels.</li>
+                                <li class="flex gap-2"><span class="text-green-500">✓</span> <strong>Restricted Storage:</strong> Data is stored in secure, isolated environments with strict access controls.</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-2 border-blue-500/30 pl-4 text-sm">
+                            <p><strong>Your Privacy Matters:</strong> We respect your digital autonomy. Personal data is retained only as long as necessary to fulfill your request or comply with legal obligations. You may request deletion at any time.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="legal-section">
+                <h2 class="text-2xl font-bold text-white mb-4 uppercase tracking-wide">System Integrity & Security</h2>
+                <div class="prose prose-invert prose-p:text-gray-400 max-w-none">
+                    <p>
+                        Any attempt to breach, flood, or manipulate the "Connexa Message Gateway" or related APIs will be treated as a hostile action. We employ active monitoring and telemetry.
+                    </p>
+                    <p class="mt-4 text-sm font-mono border border-red-900/30 bg-red-900/10 p-4 text-red-400">
+                        WARNING: Unauthorized penetration testing, SQL injection attempts, or DDoS attacks targeted to our systems and databases will result in an immediate IP ban and reporting to relevant ISP and legal authorities within the jurisdiction of Kenya.
+                    </p>
+                </div>
+            </section>
+
+            <section class="legal-section">
+                <h2 class="text-2xl font-bold text-white mb-4 uppercase tracking-wide">Liability & Warranties</h2>
+                <div class="prose prose-invert prose-p:text-gray-400 max-w-none">
+                    <p>
+                        This digital environment is provided "AS IS" and "AS AVAILABLE." The House of Brian explicitly disclaims all warranties, express or implied.
+                    </p>
+                    <p>
+                        We accept <strong>zero liability</strong> for data loss, system incompatibility, or damages resulting from the use of our experimental software or engineering tools if any, However, we encourage sending us feedback at <span class="font-mono italic">technical@odhiambobrian.dev</span> and this house will look into it as a matter of priority. Users assume full responsibility for any outcomes arising from their interactions with our systems.
+                    </p>
+                </div>
+            </section>
+
+            <section class="legal-section">
+                <h2 class="text-2xl font-bold text-white mb-4 uppercase tracking-wide">Modifications to Terms</h2>
+                <div class="prose prose-invert prose-p:text-gray-400 max-w-none">
+                    <p>
+                        The House of Brian reserves the right to modify these terms at any time without prior notice. Continued use of our systems after changes constitutes acceptance of the new terms. It is your responsibility to review these terms periodically. 
+                    </p>
+                </div>
+            </section>
+
+            <section class="legal-section">
+                <h2 class="text-2xl font-bold text-white mb-4 uppercase tracking-wide">Governing Law</h2>
+                <div class="prose prose-invert prose-p:text-gray-400 max-w-none">
+                    <p>
+                        These terms shall be governed by and construed in accordance with the laws of <strong>The Republic of Kenya</strong>. Any disputes relating to these terms shall be subject to the exclusive jurisdiction of the courts located in Nairobi/Kiambu County.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="mt-20 border-t border-gray-800 pt-10">
+            <h3 class="font-display text-xl text-white mb-4">Official Channels</h3>
+            <p class="text-gray-400 mb-6">
+                For licensing inquiries or to report security vulnerabilities, initiate a secure channel via email.
+            </p>
+            <a href="mailto:legal@odhiambobrian.dev" class="inline-flex items-center gap-2 bg-gray-800 hover:bg-white hover:text-black text-white px-6 py-3 rounded transition-all font-mono text-sm border border-gray-700">
+                <i class="fa-regular fa-envelope"></i>
+                legal@odhiambobrian.dev
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-gray-900 bg-black py-8 text-center">
+        <p class="font-mono text-[10px] text-gray-600 uppercase tracking-widest">
+            System ID: HOB-LEGAL-2025 // All Rights Reserved
+        </p>
+    </footer>
+
+</body>
+</html>

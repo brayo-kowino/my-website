@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ESSENTIALS | HOBO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background-color: #050505; 
+            color: white; 
+            overflow-x: hidden;
+        }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; }
+        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+
+        /* The Square Grid System */
+        .iso-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1px; /* The 'border' look */
+            background: #222; /* Gap color */
+        }
+        @media (min-width: 768px) {
+            .iso-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            .iso-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* The Card Interaction */
+        .essential-card {
+            position: relative;
+            aspect-ratio: 1 / 1; /* Strictly Square */
+            overflow: hidden;
+            background: #111;
+        }
+        
+        .essential-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), filter 0.5s ease;
+            filter: grayscale(100%) brightness(0.8);
+        }
+
+        .essential-card:hover img {
+            transform: scale(1.1);
+            filter: grayscale(0%) brightness(1.1);
+        }
+
+        /* Overlay Text Animation */
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .essential-card:hover .card-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Door Animation */
+        .shutter-panel {
+            transition: transform 1.2s cubic-bezier(0.8, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loading-overlay" class="fixed inset-0 z-[9999] flex pointer-events-auto">
+        <div id="shutter-left" class="shutter-panel w-1/2 h-full bg-black border-r border-gray-800 flex items-center justify-end relative">
+            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-32 bg-blue-600 shadow-[0_0_15px_#2563eb]"></div>
+            <h1 class="font-display text-4xl md:text-8xl font-bold absolute right-8 opacity-20 text-transparent bg-clip-text bg-gradient-to-t from-gray-700 to-gray-900 tracking-tighter" style="-webkit-text-stroke: 1px #333;">HOUSE</h1>
+        </div>
+        <div id="shutter-right" class="shutter-panel w-1/2 h-full bg-black border-l border-gray-800 flex items-center justify-start relative">
+             <div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-32 bg-blue-600 shadow-[0_0_15px_#2563eb]"></div>
+             <h1 class="font-display text-4xl md:text-8xl font-bold absolute left-8 opacity-20 text-transparent bg-clip-text bg-gradient-to-t from-gray-700 to-gray-900 tracking-tighter" style="-webkit-text-stroke: 1px #333;">BRIAN</h1>
+        </div>
+        
+        <button onclick="enterSite()" id="enter-btn" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 group">
+            <div class="bg-white text-black font-bold uppercase tracking-[0.3em] text-sm py-4 px-10 transition-all duration-300 hover:bg-blue-600 hover:text-white hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]">
+                ENTER  SITE and LIKE AT THE END OF PAGE
+                <span class="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1"></span>
+            </div>
+        </button>
+    </div>
+
+     <nav class="fixed top-0 left-0 w-full z-50 border-b border-brand-border bg-[#050509]/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+            <img src="personal_logo_letter_lg.png" onerror="this.style.display='none'" class="h-12 opacity-80">
+            <span class="font-display font-bold text-lg tracking-wider text-white"></span>
+            <span class="inline-block md:inline-block px-2 py-0.5 rounded text-[10px] font-mono bg-blue-900/20 text-blue-500 border border-blue-900/50">ESSENTIALS</span>
+        </div>
+        <nav class="flex items-center gap-6 text-xs font-mono text-gray-500">
+            <span class="hidden md:inline"><span class="text-yellow-600">PERIODICALLY UPDATED</span></span>
+            <a href="index.html" class="text-yellow-600 hover:text-white transition-colors whitespace-nowrap">[RETURN TO BASE]</a>
+        </nav>
+    </div>
+  </nav>
+
+    <header class="relative pt-40 pb-20 px-6 border-b border-gray-800 bg-black">
+        <div class="max-w-[1800px] mx-auto">
+            <p class="text-blue-500 font-mono text-sm mb-4 tracking-widest italic">Last updated 26 Dec 2025</p>
+            <h1 class="font-display text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none">
+                The<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-600">Essentials</span>
+            </h1>
+            <div class="mt-8 max-w-xl">
+                <p class="text-gray-400 text-lg leading-relaxed">
+                Each item in here has been carefully chosen for its functionality, reliability, and contribution to productivity, enabling me to tackle projects with efficiency and precision.
+                </p>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="w-full">
+        <div class="iso-grid">
+
+            <div class="essential-card group">
+                <img src="hp_machine.jpg" alt="Workspace">
+                <div class="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i class="fa-solid fa-microchip text-2xl drop-shadow-lg"></i>
+                </div>
+                <div class="card-content">
+                    <h2 class="font-display text-3xl font-bold mb-2">Command Center</h2>
+                    <p class="text-gray-300 text-sm mb-4">HP probook / High-Performance Spec</p>
+                    <div class="h-px w-12 bg-blue-500 mb-4"></div>
+                    <p class="text-xs text-gray-400 font-mono uppercase">
+                        The primary driver for development, design, and rendering.
+                    </p>
+                </div>
+            </div>
+
+            <div class="essential-card group">
+                <img src="work_bench.jpg" alt="Electronics">
+                <div class="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i class="fa-solid fa-bolt text-2xl drop-shadow-lg"></i>
+                </div>
+                <div class="card-content">
+                    <h2 class="font-display text-3xl font-bold mb-2">The Workbench</h2>
+                    <p class="text-gray-300 text-sm mb-4">Production workbench</p>
+                    <div class="h-px w-12 bg-blue-500 mb-4"></div>
+                    <p class="text-xs text-gray-400 font-mono uppercase">
+                        Spearker arrangements and remote control, feature phone for calls, laptop for design and development.
+                    </p>
+                </div>
+            </div>
+
+            <div class="essential-card group">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop" alt="Audio">
+                <div class="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i class="fa-solid fa-headphones text-2xl drop-shadow-lg"></i>
+                </div>
+                <div class="card-content">
+                    <h2 class="font-display text-3xl font-bold mb-2">Audio Isolation</h2>
+                    <p class="text-gray-300 text-sm mb-4">Sony Noise Cancelling</p>
+                    <div class="h-px w-12 bg-blue-500 mb-4"></div>
+                    <p class="text-xs text-gray-400 font-mono uppercase">
+                        Critical for deep work sessions and immersive focus outside the comfort of home.
+                    </p>
+                </div>
+            </div>
+
+            <div class="essential-card group">
+                <img src="portable_music.jpg" alt="portable music">
+                <div class="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i class="fa-solid fa-music text-2xl drop-shadow-lg"></i>
+                </div>
+                <div class="card-content">
+                    <h2 class="font-display text-3xl font-bold mb-2">Music on the Go</h2>
+                    <p class="text-gray-300 text-sm mb-4">LP BT Speaker</p>
+                    <div class="h-px w-12 bg-blue-500 mb-4"></div>
+                    <p class="text-xs text-gray-400 font-mono uppercase">
+                        Portable music solution for outdoor coding sessions, explorations and impromptu outdoor activities.
+                    </p>
+                </div>
+            </div>
+
+            <div class="essential-card group">
+                <img src="casio.jpg" alt="Calculator">
+                <div class="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i class="fa-solid fa-calculator text-2xl drop-shadow-lg"></i>
+                </div>
+                <div class="card-content">
+                    <h2 class="font-display text-3xl font-bold mb-2">Quick Calc</h2>
+                    <p class="text-gray-300 text-sm mb-4">Casio Scientific Calculator</p>
+                    <div class="h-px w-12 bg-blue-500 mb-4"></div>
+                    <p class="text-xs text-gray-400 font-mono uppercase">
+                        On-the-go calculations, and computational support for development work and engineering analysis and projects.
+                    </p>
+                </div>
+            </div>
+
+            <div class="essential-card group">
+                <img src="screwdriver.jpg" alt="Tools">
+                <div class="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i class="fa-solid fa-screwdriver text-2xl drop-shadow-lg"></i>
+                </div>
+                <div class="card-content">
+                    <h2 class="font-display text-3xl font-bold mb-2">Precision Tools</h2>
+                    <p class="text-gray-300 text-sm mb-4">Screwdriver Set</p>
+                    <div class="h-px w-12 bg-blue-500 mb-4"></div>
+                    <p class="text-xs text-gray-400 font-mono uppercase">
+                        Essential for opening electronics, maintenance, and applying quick fixes on personal tech gear.
+                    </p>
+                </div>
+            </div>
+
+            <div class="essential-card group">
+                <img src="android_phone.jpg" alt="Mobile">
+                <div class="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i class="fa-solid fa-signal text-2xl drop-shadow-lg"></i>
+                </div>
+                <div class="card-content">
+                    <h2 class="font-display text-3xl font-bold mb-2">Mobile Ops</h2>
+                    <p class="text-gray-300 text-sm mb-4">Android Ecosystem</p>
+                    <div class="h-px w-12 bg-blue-500 mb-4"></div>
+                    <p class="text-xs text-gray-400 font-mono uppercase">
+                        Connectivity on the go. Pixel photography and system management.
+                    </p>
+                </div>
+            </div>
+
+            <div class="essential-card group">
+                <img src="coding_notebook.jpg" alt="Notebook">
+                <div class="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i class="fa-solid fa-book text-2xl drop-shadow-lg"></i>
+                </div>
+                <div class="card-content">
+                    <h2 class="font-display text-3xl font-bold mb-2">The Notebook</h2>
+                    <p class="text-gray-300 text-sm mb-4">Analog classic journal</p>
+                    <div class="h-px w-12 bg-blue-500 mb-4"></div>
+                    <p class="text-xs text-gray-400 font-mono uppercase">
+                        Handwritten notes, sketches, and brainstorming for coding, engineering projects and ideas.
+                    </p>
+                    </div>
+                </div>  
+
+                <div class="essential-card group">
+                    <img src="fuel_coffee.jpg" alt="Coffee">
+                    <div class="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-mug-hot text-2xl drop-shadow-lg"></i>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="font-display text-3xl font-bold mb-2">Fuel Source</h2>
+                        <p class="text-gray-300 text-sm mb-4">Coffee & Tea</p>
+                        <div class="h-px w-12 bg-blue-500 mb-4"></div>
+                        <p class="text-xs text-gray-400 font-mono uppercase">
+                            Essential for long coding sessions and maintaining focus during intensive work periods.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="essential-card group">
+                    <img src="photos_archive.png" alt="Photo Storage">
+                    <div class="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-images text-2xl drop-shadow-lg"></i>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="font-display text-3xl font-bold mb-2">Photo Archive</h2>
+                        <p class="text-gray-300 text-sm mb-4">Google Photos</p>
+                        <div class="h-px w-12 bg-blue-500 mb-4"></div>
+                        <p class="text-xs text-gray-400 font-mono uppercase">
+                            Cloud storage for memories, automated backups, and easy access to photos across all devices.
+                        </p>
+                    </div>
+                </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-black py-20 border-t border-gray-800 text-center">
+        <h2 class="font-display text-2xl md:text-4xl font-bold text-gray-800 uppercase tracking-widest mb-6">
+            End of Line of code but not the End of the Journey
+        </h2>
+       <!-- NETLIFY HIDDEN FORM -->
+<form name="page-like"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden>
+  <input type="hidden" name="form-name" value="page-like">
+  <input type="hidden" name="page">
+  <input type="hidden" name="device">
+</form>
+
+<!-- LIKE BUTTON -->
+<div class="mt-6">
+  <button id="like-btn"
+    class="bg-blue-300 hover:bg-blue-700 disabled:bg-gray-400
+           text-white font-bold py-2 px-6 rounded transition-all">
+    <span id="like-text">Like this page</span>
+  </button>
+
+  <p class="mt-2 text-sm text-gray-600">
+    <span id="like-count">–</span> people found this helpful
+  </p>
+</div>
+
+<script>
+/* ===== DEVICE ID ===== */
+function getDeviceId() {
+  let id = localStorage.getItem("device_id");
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem("device_id", id);
+  }
+  return id;
+}
+
+const PAGE_NAME = "essentials";
+const likeBtn = document.getElementById("like-btn");
+const likeText = document.getElementById("like-text");
+const likeCountEl = document.getElementById("like-count");
+
+/* ===== LOAD STATE ===== */
+if (localStorage.getItem(`liked_${PAGE_NAME}`)) {
+  likeBtn.disabled = true;
+  likeText.textContent = "Marked as helpful";
+}
+
+/* Local, consistent counter (UI only) */
+let count = parseInt(localStorage.getItem(`like_count_${PAGE_NAME}`) || 0);
+likeCountEl.textContent = count > 0 ? count : "–";
+
+/* ===== CLICK HANDLER ===== */
+likeBtn.addEventListener("click", async () => {
+  if (localStorage.getItem(`liked_${PAGE_NAME}`)) return;
+
+  const formData = new URLSearchParams({
+    "form-name": "page-like",
+    "page": PAGE_NAME,
+    "device": getDeviceId()
+  });
+
+  try {
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData.toString()
+    });
+
+    // Lock state
+    localStorage.setItem(`liked_${PAGE_NAME}`, "true");
+
+    // Update UI count
+    count++;
+    localStorage.setItem(`like_count_${PAGE_NAME}`, count);
+    likeCountEl.textContent = count;
+
+    likeBtn.disabled = true;
+    likeText.textContent = "Thanks for the feedback";
+
+  } catch (err) {
+    console.error("Like failed:", err);
+  }
+});
+</script>
+
+        <div class="mb-6">
+            <p class="text-xs font-mono text-gray-600">
+            FEEDBACK: feedback@odhiambobrian.dev
+        </p>
+        <p class="text-xs font-mono text-gray-600">
+            HOUSE OF BRIAN ODHIAMBO &copy; 2025
+        </p>
+        </div>
+    </footer>
+
+    <script>
+        function enterSite() {
+            const leftPanel = document.getElementById('shutter-left');
+            const rightPanel = document.getElementById('shutter-right');
+            const btn = document.getElementById('enter-btn');
+            const overlay = document.getElementById('loading-overlay');
+
+            leftPanel.style.transform = "translateX(-100%)";
+            rightPanel.style.transform = "translateX(100%)";
+            
+            // 2. Hide button
+            btn.style.opacity = "0";
+
+            // 3. Remove overlay from flow so we can click the page
+            setTimeout(() => {
+                overlay.style.pointerEvents = "none";
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

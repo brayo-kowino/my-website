@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexa Inbox</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --panel: #121620;
+      --border: #1f2533;
+      --text: #e6eaf0;
+      --muted: #9aa4b2;
+      --accent: #5b8cff;
+      --danger: #ff6b6b;
+      --success: #4ade80;
+    }
+
+    * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #0e1325, var(--bg));
+      color: var(--text);
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+    }
+
+    aside {
+      background: var(--panel);
+      border-right: 1px solid var(--border);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .filters button {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: var(--text);
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .filters button.active {
+      border-color: var(--accent);
+      background: rgba(91,140,255,0.15);
+    }
+
+    main {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 24px;
+    }
+
+    .list {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow-y: auto;
+    }
+
+    .item {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    .item.unread { background: rgba(91,140,255,0.08); }
+
+    .item h4 { margin: 0 0 6px; font-size: 0.95rem; }
+
+    .item span { font-size: 0.75rem; color: var(--muted); }
+
+    .viewer {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .viewer h2 { margin: 0; }
+
+    .meta { font-size: 0.8rem; color: var(--muted); }
+
+    .actions button {
+      margin-right: 8px;
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .actions button.primary { border-color: var(--accent); }
+    .actions button.danger { border-color: var(--danger); color: var(--danger); }
+
+    @media(max-width: 900px) {
+      body { grid-template-columns: 1fr; }
+      main { grid-template-columns: 1fr; }
+      aside { flex-direction: row; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <div class="logo">Connexa Inbox</div>
+    <div class="filters">
+      <button class="active" onclick="filterStatus('unread')">Unread</button>
+      <button onclick="filterStatus('replied')">Replied</button>
+      <button onclick="filterStatus('archived')">Archived</button>
+    </div>
+  </aside>
+
+  <main>
+    <div class="list" id="messageList"></div>
+
+    <div class="viewer" id="viewer">
+      <h2>Select a message</h2>
+      <p class="meta">Messages delivered via Connexa</p>
+    </div>
+  </main>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    let currentStatus = 'unread';
+
+    function filterStatus(status) {
+      currentStatus = status;
+      document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      loadMessages();
+    }
+
+    function loadMessages() {
+      const list = document.getElementById('messageList');
+      list.innerHTML = '';
+
+      db.collection('connexa_messages')
+        .where('status', '==', currentStatus)
+        .orderBy('createdAt', 'desc')
+        .onSnapshot(snapshot => {
+          list.innerHTML = '';
+          snapshot.forEach(doc => {
+            const d = doc.data();
+            const div = document.createElement('div');
+            div.className = 'item ' + d.status;
+            div.innerHTML = `<h4>${d.intent}</h4><span>${d.name} • ${d.email}</span>`;
+            div.onclick = () => openMessage(doc.id, d);
+            list.appendChild(div);
+          });
+        });
+    }
+
+    function openMessage(id, d) {
+      const viewer = document.getElementById('viewer');
+      viewer.innerHTML = `
+        <h2>${d.intent}</h2>
+        <div class="meta">${d.name} • ${d.email}</div>
+        <p>${d.message}</p>
+        <div class="actions">
+          <button class="primary" onclick="updateStatus('${id}','replied')">Mark Replied</button>
+          <button onclick="updateStatus('${id}','archived')">Archive</button>
+          <button class="danger" onclick="updateStatus('${id}','archived')">Delete</button>
+        </div>
+      `;
+
+      if (d.status === 'unread') {
+        updateStatus(id, 'replied');
+      }
+    }
+
+    function updateStatus(id, status) {
+      db.collection('connexa_messages').doc(id).update({ status });
+    }
+
+    loadMessages();
+  </script>
+</body>
+</html>

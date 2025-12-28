@@ -1,278 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Artifacts | House of Brian Odhiambo</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              black: '#050509',
+              dark: '#0a0a0f',
+              accent: '#6366f1', // Indigo
+              border: 'rgba(255, 255, 255, 0.08)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
       background-color: #050509;
-      color: #f9f9f9;
-      overflow-x: hidden;
+      background-image: radial-gradient(circle at 50% 0%, #1a1a2e 0%, #050509 40%);
+      color: #e2e8f0;
     }
-    .fade-in {
-      animation: fadeIn 1.2s ease-in-out;
+    
+    /* Smooth reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .artifact-card:hover img {
-      transform: scale(1.05);
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050509;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4f46e5;
     }
   </style>
 </head>
-<body class="min-h-screen">
+<body class="antialiased min-h-screen flex flex-col relative">
 
-  <!-- Header -->
-  <section class="text-center pt-24 pb-16 fade-in">
-    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-wide">
-      Artifacts<span class="text-indigo-400"> Archive</span>
-    </h1>
-    <p class="text-gray-400 text-lg italic max-w-2xl mx-auto">
-      A visual story of progress from quiet beginnings to creations that now carry meaning.  
-      Each artifact is a captured moment of growth, reflection, and inspiration.
-    </p>
-    <div class="w-24 h-1 bg-indigo-500 mx-auto mt-6 rounded-full"></div>
-  </section>
+  <nav class="fixed top-0 left-0 w-full z-50 border-b border-brand-border bg-[#050509]/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+            <img src="personal_logo_letter_lg.png" onerror="this.style.display='none'" class="h-12 opacity-80">
+            <span class="font-display font-bold text-lg tracking-wider text-white"></span>
+            <span class="inline-block md:inline-block px-2 py-0.5 rounded text-[10px] font-mono bg-blue-900/20 text-blue-500 border border-blue-900/50">COLLECTIONS</span>
+        </div>
+        <nav class="flex items-center gap-6 text-xs font-mono text-gray-500">
+            <span class="hidden md:inline"><span class="text-yellow-600">PERIODICALLY UPDATED</span></span>
+            <a href="index.html" class="text-yellow-600 hover:text-white transition-colors whitespace-nowrap">[RETURN TO BASE]</a>
+        </nav>
+    </div>
+  </nav>
 
-  <!-- Artifact Gallery -->
-  <section class="max-w-6xl mx-auto px-6 mb-24">
-    <h2 class="text-2xl md:text-3xl font-semibold text-indigo-400 mb-8">Gallery of Creations</h2>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+  <main class="flex-grow pt-32 pb-24 px-6">
+    
+    <section class="max-w-7xl mx-auto mb-20 text-center reveal">
       
-      <!-- Artifact 1 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=800&q=80" 
-               alt="Iskify360" 
-               class="w-full h-60 object-cover transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold">Iskify360 Platform</h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-            Born from Student Center’s spirit Iskify360 stands as a reimagined vision.  
-            It’s more than tech it’s identity, innovation, and purpose combined.
-          </p>
-        </div>
-      </div>
-
-       <!-- Artifact 8 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="gr_dsn.jpg" 
-               alt="logo design" 
-               class="w-full h-60 object-fit transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold">Iskify360 logo design</h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-         Visioning and crafting the Iskify360 logo involved blending modern aesthetics with symbolic elements that reflect the platform's core values of connectivity and innovation.
-          </p>
-        </div>
-      </div>
-
-        <!-- Artifact 6 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="iskify360_brand_image.png" 
-               alt="logo design" 
-               class="w-full h-60 object-contain bg-black transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold"></h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-         The new Iskify360 logo. with its sleek design and vibrant colors, encapsulates the essence of innovation and creativity that defines the platform.
-          </p>
-        </div>
-      </div>
-
-      <!-- Artifact 2 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="sm360.png" 
-               alt="Smart360 AI" 
-               class="w-full h-60 object-cover transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold"></h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-            My personal AI (Smart360) built on Mistral designed not to copy minds,  
-            but to inspire them. A fusion of logic, empathy, and ambition.
-          </p>
-        </div>
-      </div>
-
-      <!-- Artifact 3 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="iskify360.png" 
-               alt="Iskify360 App" 
-               class="w-full h-60 object-cover transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold"></h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-            Iskify360 Android app for students merging communication,  
-            and connection into one living platform even though it was discontinued, it still holds a special place in this house.
-          </p>
-        </div>
-      </div>
-
-      <!-- Artifact 4 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="rake_fab.jpg" 
-               alt="Rake head fabrication" 
-               class="w-full h-60 object-cover transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold">Rake head</h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-            Turning raw metal pieces into meaningful and usable products through fabrication and welding. This is one of the rake heads I fabricated.
-          </p>
-        </div>
-      </div>
-
-      <!-- Artifact 5 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="cup_design.jpg" 
-               alt="Student Center App" 
-               class="w-full h-60 object-contain transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold">Mini cup prototype</h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-            3D designed and modelled this minicup, then experimented with different materials and finishes to create a prototype that balances aesthetics with functionality. It works!
-          </p>
-        </div>
-      </div>
-
-      <!-- Artifact 6 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="ind_exp.jpg" 
-               alt="Student Center App" 
-               class="w-full h-60 object-fit transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold">Photograph of a ship</h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-            On a field trip in a coastal town, I captured this image of a ship in the Indian Ocean carrying industrial equipment. It symbolizes the connection between trade, engineering, and the vast possibilities of creativity and innovation.
-          </p>
-        </div>
-      </div>
-
-      <!-- Artifact 6 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="arc_mine.jpg" 
-               alt="mining" 
-               class="w-full h-60 object-fit transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold">Photograph of mining op.in progress</h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-            Mining operations are crucial for extracting the resources that power our continent. This photograph captures the essence of hard work and innovation in the mining industry, showcasing the machinery and teamwork involved in the process.
-          </p>
-        </div>
-      </div>
-
-       <!-- Artifact 6 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="boiling_grd.jpg" 
-               alt="mining" 
-               class="w-full h-60 object-fit transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold">Photograph of a boiling ground water</h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-            Some crazy outdoor wonders I captured during one of my trips. This boiling ground water phenomenon showcases the Earth's geothermal activity, reminding us of the powerful forces at work beneath our feet.
-          </p>
-        </div>
-      </div>
-
-       <!-- Artifact 6 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="welding.jpg" 
-               alt="welding" 
-               class="w-full h-60 object-fit transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold">Welding sparks</h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-           Welding is both an art and a science. This photograph captures the dynamic sparks flying during the welding process, symbolizing the fusion of materials and the creation of strong, lasting bonds through skill and precision. 
-          </p>
-        </div>
-      </div>
-
-       <!-- Artifact 6 -->
-      <div class="artifact-card bg-[#0b0b10] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-700/30 transition duration-500 fade-in">
-        <div class="relative overflow-hidden">
-          <img src="wiring.jpg" 
-               alt="welding" 
-               class="w-full h-60 object-fit transition-transform duration-500">
-          <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-            <h3 class="text-white text-lg font-bold">Motors | Electrical machines</h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-gray-300 text-sm leading-relaxed">
-           Early wiring now re-imagined, showcasing how passion can turn into proffesion. This photograph captures the intricate details of electrical motors, highlighting the complexity and precision involved in their design and function.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Reflections -->
-  <section class="py-24 text-center fade-in">
-    <div class="max-w-4xl mx-auto px-6">
-      <p class="text-xl md:text-2xl italic text-gray-300 mb-8">
-        Every photograph is a footprint a mark of who I was,  
-        and a hint of who I’m becoming.
+      <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 tracking-tight">
+        The Artifacts
+      </h1>
+      
+      <p class="text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
+        This is a digital collection of engineering feats, digital creations, and captured moments, using my own cameras for example. 
+        <span class="text-blue-400 italic font-serif">A visual story of progress.</span>
       </p>
-      <p class="text-lg text-gray-400">
-        These are not trophies. They are timelines of effort, each frame holding a lesson.
-      </p>
-      <div class="w-24 h-1 bg-indigo-500 mx-auto mt-10 rounded-full"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Outro -->
-  <footer class="text-center py-16 text-gray-400">
-    <p class="text-xl italic">“Artifacts are not just things I made they’re pieces of who I became.”</p>
-    <p class="text-sm mt-6">© 2025 The House of Brian Odhiambo. All Rights Reserved.</p>
+    <div class="max-w-7xl mx-auto mb-12 border-b border-brand-border flex flex-col md:flex-row justify-between items-end pb-4 reveal">
+      <div>
+        <span class="text-xs font-mono text-gray-500 uppercase tracking-widest">Collection Vol. 2025</span>
+      </div>
+      <div class="text-xs font-mono text-gray-500 mt-2 md:mt-0">
+        SCROLL TO EXPLORE ↓
+      </div>
+    </div>
+
+    <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-indigo-300 border border-white/10">WEB PLATFORM</div>
+          <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=800&q=80" alt="Iskify360" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter group-hover:brightness-110">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Iskify360 Platform</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Born from Student Center’s spirit, reimagined as a vision of identity and innovation.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #ISK-001</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-pink-300 border border-white/10">DESIGN</div>
+          <img src="gr_dsn.jpg" alt="logo design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Iskify360 Identity</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Blending modern aesthetics with symbolic elements to reflect core values of connectivity.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #DSN-042</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden bg-black flex items-center justify-center">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-pink-300 border border-white/10">BRANDING</div>
+          <img src="iskify360_brand_image.png" alt="logo" class="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Iskify360 Branding</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Sleek design and vibrant colors encapsulating the essence of innovation.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #BRD-019</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-emerald-300 border border-white/10">AI / LLM</div>
+          <img src="sm360.png" alt="Smart360 AI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Smart360 AI</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">A fusion of logic, empathy, and ambition. Built on Mistral to inspire minds.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #AI-099</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-indigo-300 border border-white/10">MOBILE DEV</div>
+          <img src="iskify360.png" alt="App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Iskify360 Mobile</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">The legacy Android app for students merging communication and connection.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #APK-V1</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-amber-300 border border-white/10">FABRICATION</div>
+          <img src="rake_fab.jpg" alt="Fabrication" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Metal Fabrication</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Turning raw metal pieces into usable products. A custom rake head fabricated from scratch.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #MTL-005</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-cyan-300 border border-white/10">PROTOTYPING</div>
+          <img src="cup_design.jpg" alt="Prototype" class="w-full h-full object-contain bg-neutral-900 transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">3D Mini Cup</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">3D modeled and prototyped. Balancing aesthetics with functionality through material experimentation.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #PRT-003</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-orange-300 border border-white/10">PHOTOGRAPHY</div>
+          <img src="ind_exp.jpg" alt="Ship" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Maritime Industry</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Captured in the Indian Ocean. Symbolizing the connection between trade and engineering.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #IMG-COAST</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-orange-300 border border-white/10">FIELD WORK</div>
+          <img src="arc_mine.jpg" alt="Mining" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Mining Operations</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Capturing the essence of hard work and machinery that extract resources powering our continent.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #GEO-01</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-teal-300 border border-white/10">GEOLOGY</div>
+          <img src="boiling_grd.jpg" alt="Geothermal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Geothermal Forces</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Boiling ground water phenomenon showcasing the powerful forces at work beneath our feet.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #GEO-02</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-amber-300 border border-white/10">WELDING</div>
+          <img src="welding.jpg" alt="welding" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">The Art of Fusion</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Dynamic sparks flying. Creating strong, lasting bonds through skill and precision.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #WLD-008</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="reveal group relative bg-brand-dark border border-brand-border rounded-xl overflow-hidden hover:border-indigo-500/50 transition-colors duration-500">
+        <div class="relative h-64 overflow-hidden">
+          <div class="absolute top-3 left-3 z-10 bg-black/70 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-purple-300 border border-white/10">ELECTRICAL</div>
+          <img src="wiring.jpg" alt="wiring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Electrical Machines</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">Early wiring reimagined. Capturing the complexity and precision involved in motor design.</p>
+          <div class="pt-4 border-t border-white/5 flex justify-between items-center">
+            <span class="text-xs font-mono text-gray-600">ID: #ELE-004</span>
+            <span class="text-indigo-500 text-lg">↗</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="bg-black border-t border-brand-border pt-16 pb-8 relative overflow-hidden">
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-indigo-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-display font-bold text-white mb-4">What happens</h2>
+          <p class="text-gray-400 text-sm max-w-sm leading-relaxed">
+            Electricity, mechanics, design, and photography converge here. But what truly happens is the story of innovation, creativity, and relentless pursuit of excellence.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold font-mono text-sm mb-6 uppercase tracking-wider">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-500 hover:text-indigo-400 text-sm transition-colors">Home Base</a></li>
+            <li><a href="#" class="text-gray-500 hover:text-indigo-400 text-sm transition-colors">Project Index</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold font-mono text-sm mb-6 uppercase tracking-wider">Major Highlights</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-500 hover:text-indigo-400 text-sm transition-colors">Smart360 & Iskify360 Platform</a></li>
+            <li><a href="#" class="text-gray-500 hover:text-indigo-400 text-sm transition-colors">Design</a></li>
+            <li><a href="#" class="text-gray-500 hover:text-indigo-400 text-sm transition-colors">Fabrication</a></li>
+            <li><a href="#" class="text-gray-500 hover:text-indigo-400 text-sm transition-colors">3D Prototyping</a></li>
+            <li><a href="#" class="text-gray-500 hover:text-indigo-400 text-sm transition-colors">Photography & Field Work</a></li>
+            <li><a href="#" class="text-gray-500 hover:text-indigo-400 text-sm transition-colors">Electrical & Mechanical Engineering</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-600 text-xs font-mono">© 2025 THE HOUSE OF BRIAN ODHIAMBO. ALL RIGHTS RESERVED.</p>
+        <div class="flex gap-6">
+        </div>
+      </div>
+    </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 </html>

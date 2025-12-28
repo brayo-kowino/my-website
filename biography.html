@@ -1,128 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.9">
-  <title>Biography | Brian Odhiambo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Biography | Brian Odhiambo</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Tailwind CSS -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-<!-- Animate.css -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-   
-
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              bg: '#050509',
+              card: '#0f0f16',
+              gold: '#D4AF37', 
+              tech: '#60A5FA',
+              blue: '#60A5FA',
+            }
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fafafa;
-      color: #1e1e1e;
+      background-color: #050509;
+      color: #e2e8f0;
       overflow-x: hidden;
     }
 
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      letter-spacing: 0.1em;
-      color: #1f1f1f;
+    /* Typography Tweaks */
+    .prose-custom p {
+      margin-bottom: 2rem;
+      line-height: 1.9;
+      font-weight: 300;
+      color: #cbd5e1;
     }
-
-    p {
-      line-height: 1.8;
-      color: #333;
-    }
-
-    .highlight {
-      color: #6d28d9;
+    
+    .prose-custom strong {
+      color: #fff;
       font-weight: 600;
     }
-
-    .bio-container {
-      column-count: 1;
-      column-gap: 2rem;
+    
+    .highlight {
+      background: rgb(51, 120, 248);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
     }
 
-    @media (min-width: 1024px) {
-      .bio-container {
-        column-count: 3;
-      }
+    /* Drop Cap for first paragraph */
+    .first-paragraph::first-letter {
+      float: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      line-height: 0.8;
+      padding-right: 12px;
+      padding-top: 4px;
+      color: #D4AF37; /* Gold */
+      font-weight: 700;
     }
 
-    .bio-container p {
-      break-inside: avoid;
-      margin-bottom: 1.5rem;
+    /* Image Glow */
+    .image-glow {
+      box-shadow: 0 0 60px -15px rgba(99, 102, 241, 0.3);
+      transition: all 0.5s ease;
     }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 1s forwards;
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .image-glow:hover {
+      box-shadow: 0 0 80px -10px rgba(212, 175, 55, 0.4);
     }
   </style>
 </head>
 
-<body>
+<body class="antialiased selection:bg-indigo-500 selection:text-white">
 
-  <!-- Biography Section -->
-  <section id="biography" class="py-24 px-6 md:px-20 relative">
-
-    <!-- Header -->
-<div class="max-w-5xl mx-auto text-center mb-10 fade-in">
-  <h2 class="text-4xl md:text-6xl font-extrabold mb-4 text-gray-900">
-    The Story of <span class="highlight">Brian Odhiambo</span>
-  </h2>
-  <p class="text-indigo-700 text-lg md:text-xl tracking-wide font-medium">
-    Engineer • Visionary • Tech Enthusiast • Leader
-  </p>
-  <div class="w-28 h-1 bg-indigo-600 mx-auto mt-5 rounded-full"></div>
-</div>
-
-<!-- Full Photo Section -->
-<div class="flex flex-col items-center justify-center mb-20 fade-in">
-  <div class="relative group">
-    <img 
-      src="engineer2.jpg" 
-      alt="Engineer Brian Odhiambo" 
-      class="w-56 h-56 md:w-72 md:h-72 rounded-full shadow-xl object-cover border-4 border-white hover:scale-105 transition-transform duration-500 ease-in-out"
-    >
-    <div class="absolute inset-0 rounded-full ring-4 ring-indigo-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-indigo-900/10 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-amber-900/5 rounded-full blur-[100px]"></div>
   </div>
-  <p class="text-center text-gray-600 italic mt-5 text-lg">
-    <span class="font-semibold text-gray-800">Brian Odhiambo</span> | Visionary Innovator
-  </p>
-</div>
 
+  <nav class="fixed top-0 left-0 w-full z-50 border-b border-brand-border bg-[#050509]/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+            <img src="personal_logo_letter_lg.png" onerror="this.style.display='none'" class="h-12 opacity-80">
+            <span class="font-display font-bold text-lg tracking-wider text-white"></span>
+            <span class="inline-block md:inline-block px-2 py-0.5 rounded text-[10px] font-mono bg-blue-900/20 text-blue-500 border border-blue-900/50">BIOGRAPHY v2.0</span>
+        </div>
+        <nav class="flex items-center gap-6 text-xs font-mono text-gray-500">
+            <span class="hidden md:inline"><span class="">CONVENIETLY UPDATED</span></span>
+            <a href="index.html" class="text-yellow-600 hover:text-white transition-colors whitespace-nowrap">[RETURN TO BASE]</a>
+        </nav>
+    </div>
+  </nav>
 
-    <!-- Biography Text -->
-    <div class="bio-container text-[1rem] fade-in">
+  <main class="relative z-10 pt-32 pb-24 px-6">
+    
+    <header class="max-w-4xl mx-auto text-center mb-16 animate__animated animate__fadeIn">
+      <p class="text-brand-gold font-mono text-xs tracking-[0.3em] uppercase mb-6">Established 2004 • Kenya</p>
+      
+      <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 tracking-tight leading-tight">
+        The Story of <br/>
+        <span class="highlight">Brian Odhiambo</span>
+      </h1>
+      
+      <div class="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-sm font-mono text-gray-400 mt-6">
+        <span>ENGINEER</span>
+        <span class="w-1 h-1 bg-gray-600 rounded-full hidden md:block"></span>
+        <span>VISIONARY</span>
+        <span class="w-1 h-1 bg-gray-600 rounded-full hidden md:block"></span>
+        <span>TECH ENTHUSIAST</span>
+        <span class="w-1 h-1 bg-gray-600 rounded-full hidden md:block"></span>
+        <span>LEADER</span>
+      </div>
+    </header>
 
-      <p>I was born in <strong class="highlight">Nakuru County</strong> and raised by my great-grandma in a small village in <strong class="highlight">Siaya County, Kenya</strong> a land of rich food, calm villages, resilient people, and stories that breathe inspiration. From my earliest days, I carried a deep curiosity that reached beyond play. I wasn’t just fascinated by things; I wanted to understand how they worked. Radios, chargers, phones if it had wires, it became my next experiment.</p>
+    <div class="max-w-sm mx-auto mb-20 relative animate__animated animate__fadeInUp">
+      <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-amber-400 rounded-full blur-2xl opacity-20"></div>
+      <div class="relative rounded-full p-2 border border-white/10 bg-[#050509]">
+        <img 
+          src="engineer2.jpg" 
+          alt="Engineer Brian Odhiambo" 
+          class="w-full aspect-square rounded-full object-cover border border-white/10 image-glow grayscale hover:grayscale-0 transition-all duration-700"
+        >
+      </div>
+      <div class="absolute -right-4 bottom-10 bg-[#0f0f16] border border-white/10 px-4 py-2 rounded-lg shadow-xl">
+        <p class="text-[10px] font-mono text-gray-400 uppercase tracking-wider">Status</p>
+        <p class="text-xs font-bold text-yellow-500 flex items-center gap-0">
+          <span class=""></span> Active / Building
+        </p>
+      </div>
+    </div>
 
-      <p>In <strong>primary school</strong>, my curiosity found direction. I became known as the boy who could “fix things.” My teachers noticed my patience and analytical mind. They trusted me with school gadgets, a rare privilege. I was appointed <strong class="highlight">Secretary ICT</strong>, managing school computers, projectors and ensuring smooth digital lessons. I performed these duties with discipline and excellence, earning an official certification of recognition that remains one of my proudest early milestones.</p>
+    <article class="max-w-2xl mx-auto prose-custom text-lg relative">
+      
+      <div class="absolute left-0 -top-10 w-20 h-[1px] bg-brand-gold/50"></div>
 
-      <p>As I transitioned into <strong?>St. Paul's Ndenga Secondary School</strong>, leadership and discipline became defining parts of my life. I served as <strong>Class Captain</strong> and later as <strong>Secretary of the Disciplinary Committee</strong>. Leadership was not about being feared; it was about being fair, listening, and guiding others. Through this, I earned trust not just from teachers, but from fellow students who saw me as dependable and just.</p>
+      <p class="first-paragraph">I was born in <strong class="text-white">Nakuru County</strong> in 2004 and raised by my great-grandma in a small village in <strong class="text-white">Siaya County, Kenya</strong> a land of rich food, calm villages, resilient people, and stories that breathe inspiration. From my earliest days, I carried a deep curiosity that reached beyond play. I wasn’t just fascinated by things; I wanted to understand how they worked. Radios, chargers, phones if it had wires, it became my next experiment.</p>
+
+      <p>In <strong>primary school</strong>, my curiosity found direction. I became known as the boy who could “fix things.” My teachers noticed my patience and analytical mind. They trusted me with school gadgets, a rare privilege. I was appointed <strong class="text-white">Secretary ICT</strong>, managing school computers, projectors and ensuring smooth digital lessons. I performed these duties with discipline and excellence, earning an official certification of recognition that remains one of my proudest early milestones.</p>
+
+      <p>As I transitioned into <strong>St. Paul's Ndenga Secondary School</strong>, leadership and discipline became defining parts of my life. I served as <strong>Class Captain</strong> and later as <strong>Secretary of the Disciplinary Committee</strong>. Leadership was not about being feared; it was about being fair, listening, and guiding others. Through this, I earned trust not just from teachers, but from fellow students who saw me as dependable and just.</p>
+
+      <div class="my-12 border-l-2 border-brand-tech pl-6 py-2 italic text-gray-400 font-serif text-xl">
+        "Everyone expected me to pursue Medicine... But my heart had already chosen its path."
+      </div>
 
       <p>Academically, I was very good. My strength lay in <strong>Mathematics, Computer Studies, Geography, Chemistry, and Biology</strong>. I had a special love for Computer Studies, where I consistently ranked top of my class with plain <strong>A</strong>. Physics, though challenging, never discouraged me it made me more determined to understand the science behind technology.</p>
 
-      <p>Then came the <strong class="highlight">KCSE results</strong>. I was the overral top performer of my school. My <strong>A in Biology</strong> surprised even my teachers. Everyone expected me to pursue Medicine; “You’re meant to be a doctor,” they said. But my heart had already chosen its path. I didn’t want to heal bodies; I wanted to build systems that empower minds. So I ignored Medicine entirely and set my eyes on technology.</p>
+      <p>Then came the <strong class="text-white">KCSE results</strong>. I was the overral top performer of my school. My <strong>A in Biology</strong> surprised even my teachers. Everyone expected me to pursue Medicine; “You’re meant to be a doctor,” they said. But my heart had already chosen its path. I didn’t want to heal bodies; I wanted to build systems that empower minds. So I ignored Medicine entirely and set my eyes on technology.</p>
 
       <p>I applied for <strong>Computer Science at the University of Nairobi</strong> and <strong>Mining and Mineral Processing Engineering at JKUAT</strong>. Fate had a different plan; I was placed in Mining Engineering. At first, disappointment hit me. But my father, who always called me “Engineer,” smiled and said, “This is your destiny.” Today, I see how right he was because engineering became the bridge that united my technical curiosity with real-world application.</p>
 
@@ -140,59 +182,51 @@
 
       <p>My story is far from over. I continue to learn, to innovate, and to grow guided by one unshakable belief: that excellence is not a destination but a continuous journey.</p>
 
-      <p class="text-indigo-700 italic text-center mt-10 text-lg font-medium">
-        “I’m not here to fit in. I’m here to build something that will outlive my name.”<br>
-        — <strong>Brian Odhiambo</strong> | Engineer | Founder, Iskify360™
+      <div class="mt-16 p-8 border border-white/10 bg-white/5 rounded-2xl text-center relative overflow-hidden">
+        <div class="absolute -top-10 -left-10 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl"></div>
+        <p class="text-xl md:text-2xl font-serif italic text-white mb-6 relative z-10">
+          “I’m not here to fit in. I’m here to build something that will outlive my name.”
+        </p>
+        <div class="flex flex-col items-center">
+          <span class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-2">Brian Odhiambo</span>
+          <span class="text-gray-500 font-mono text-[10px]">ENGINEER | FOUNDER ISKIFY360™</span>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="relative pt-24 pb-12 px-6 text-center border-t border-white/5 bg-[#0a0a0f]">
+    <div class="absolute inset-0 z-0 opacity-10 bg-cover bg-center" style="background-image: url('end_p_bg.png'); filter: grayscale(100%);"></div>
+    <div class="absolute inset-0 z-0 bg-gradient-to-t from-[#050509] via-[#050509]/80 to-transparent"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Thank You for Visiting</h2>
+      <p class="text-gray-400 max-w-xl mx-auto mb-10 leading-relaxed font-light">
+        The Biography of <span class="text-blue-400 font-medium">Brian Odhiambo</span>. <br/>
+        May it inspire you to chase your own dreams with unwavering determination.
       </p>
 
+      <div class="w-16 h-1 bg-blue-400 rounded-full mx-auto mb-10"></div>
+
+      <div class="flex justify-center gap-8 mb-12">
+        <a href="https://www.linkedin.com/in/brian-odhiambo-4646b4327" class="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all text-2xl"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/eng_brayo" class="text-gray-400 hover:text-pink-500 hover:scale-110 transition-all text-2xl"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/brianodhiambo.wuodben" class="text-gray-400 hover:text-blue-600 hover:scale-110 transition-all text-2xl"><i class="fab fa-facebook"></i></a>
+      </div>
+
+      <img src="personal_logo_dlg.png" alt="House of Brian Odhiambo" class="h-16 w-auto mx-auto mb-6 opacity-50 hover:opacity-100 transition-opacity">
+      
+      <p class="text-xs font-mono text-gray-600 tracking-widest uppercase">
+        &copy; 2004-2025 Biography. All rights reserved.
+      </p>
     </div>
-  </section>
+  </footer>
 
-  
-<section id="thankyou" class="relative py-24 px-6 text-center text-white bg-cover bg-center bg-fixed" 
-         style="background-image: url('end_p_bg.png');">
-  
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black/10"></div>
-
-  <!-- Content -->
-  <div class="relative z-10 flex flex-col items-center justify-center space-y-6 animate__animated animate__fadeInUp">
-    <h2 class="text-4xl md:text-6xl font-extrabold tracking-wide drop-shadow-lg text-white">
-      Thank You for Visiting
-    </h2>
-
-    <p class="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
-      The Biography of <span class="font-semibold text-indigo-300">Brian Odhiambo.</span>  
-      May it inspire you to chase your own dreams with unwavering determination.
-    </p>
-
-    <hr class="w-24 border-t-4 border-indigo-400 rounded-full my-4 animate__animated animate__fadeInUp animate__delay-1s">
-
-     <img src="personal_logo_dlg.png" alt="House of Brian Odhiambo" class="h-20 md:h-24 w-auto animate__animated animate__fadeIn animate__delay-3s">
-
-
-    <ul class="social-media-icons" style="list-style-type: none; padding: 0; display: flex; justify-content: center; gap: 30px;">
-            <!-- Email Icon -->
-            <li><a href="mailto:odhisbrayo80@gmail.com" target="_blank" class="email-icon" style="font-size: 2rem; color: #fff; transition: transform 0.3s; font-weight: 200;">
-                <i class="fas fa-envelope"></i>
-            </a></li>
-            <!-- LinkedIn Icon -->
-            <li><a href="https://www.linkedin.com/in/brian-odhiambo-4646b4327" target="_blank" class="linkedin-icon" style="font-size: 2rem; color: #fff; transition: transform 0.3s; font-weight: 200;">
-                <i class="fab fa-linkedin"></i>
-            </a></li>
-            <!-- Instagram Icon -->
-            <li><a href="https://www.instagram.com/eng_brayo" target="_blank" class="instagram-icon" style="font-size: 2rem; color: #fff; transition: transform 0.3s; font-weight: 200;">
-                <i class="fab fa-instagram"></i>
-            </a></li>
-            <!-- Facebook Icon -->
-            <li><a href="https://www.facebook.com/brianodhiambo.wuodben" target="_blank" class="facebook-icon" style="font-size: 2rem; color: #fff; transition: transform 0.3s; font-weight: 200;">
-                <i class="fab fa-facebook"></i>
-            </a></li>
-        </ul>
-
-        <p style="color: rgb(211, 208, 208)">&copy; 2025 Brian Odhiambo. All rights reserved.</p>
-  </div>
-</section>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    
+    });
+  </script>
 </body>
 </html>
